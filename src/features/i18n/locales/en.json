@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "home": "Home",
+    "tours": "Tours",
+    "about": "About Us",
+    "contact": "Contact",
+    "reserve": "Make a Reservation"
+  },
+  "hero": {
+    "badge": "Horse Tours • Nature • Adventure",
+    "title": "Horse Tour",
+    "name": "El Abanico",
+    "bookNow": "Book Now",
+    "viewTours": "View Tours"
+  }
+}

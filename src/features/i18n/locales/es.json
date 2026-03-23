@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "tours": "Tours",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "reserve": "Hacer Reserva"
+  },
+  "hero": {
+    "badge": "Tours a Caballo • Naturaleza • Aventura",
+    "title": "Tour de Caballos",
+    "name": "El Abanico",
+    "bookNow": "Reservar Ahora",
+    "viewTours": "Ver Tours"
+  }
+}
