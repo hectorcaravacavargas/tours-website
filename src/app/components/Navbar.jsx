@@ -101,7 +101,11 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="px-5 pb-5 pt-3">
+          <div className="px-5 pb-5 pt-3 flex flex-col gap-4">
+            {/* Toggle idioma en el menú mobile */}
+            <div className="flex justify-center">
+              <LanguageToggle />
+            </div>
             <a
               href="#contact"
               onClick={closeMenu}
