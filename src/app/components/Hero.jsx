@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 
 import image1 from '../../assets/hero.png'
 
+
 export function Hero() {
   const { t } = useTranslation()
 
