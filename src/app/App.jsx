@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AppProviders } from './providers/AppProviders'
 import { Navbar } from './components/Navbar'
@@ -11,6 +12,14 @@ import { Footer } from './components/Footer'
 import { ToursPage } from './pages/ToursPage'
 
 function HomePage() {
+  useEffect(() => {
+    const id = window.location.hash.replace('#', '')
+    if (!id) return
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }, [])
+
   return (
     <div className="bg-forest-950 min-h-screen">
       <Navbar />

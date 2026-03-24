@@ -28,6 +28,10 @@ export function Footer() {
 
   const scrollTo = (id, e) => {
     e.preventDefault()
+    if (window.location.pathname !== '/') {
+      window.location.href = `/#${id}`
+      return
+    }
     setOverlay(true)
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     setTimeout(() => setOverlay(false), 700)
