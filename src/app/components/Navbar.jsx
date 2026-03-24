@@ -36,8 +36,9 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 p-3">
-      {/* ── Bar principal ──────────────────────────── */}
+      {/* ── Barra principal ────────────────────────── */}
       <div className="bg-forest-950/70 backdrop-blur-md rounded-2xl flex items-center justify-between px-5 py-3.5">
+
         {/* Logo */}
         <a href="#home" onClick={closeMenu} className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full border border-forest-400/50 bg-forest-800/60 flex items-center justify-center">
@@ -48,13 +49,13 @@ export function Navbar() {
           </span>
         </a>
 
-        {/* Links — solo desktop */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Links — solo desktop, ancho fijo para evitar layout shift */}
+        <ul className="hidden md:flex items-center justify-between w-[320px]">
           {NAV_LINKS.map(({ key, href }) => (
             <li key={key}>
               <a
                 href={href}
-                className="text-white/75 hover:text-white text-sm font-medium transition-colors duration-200"
+                className="text-white/75 hover:text-white text-sm font-medium transition-colors duration-200 whitespace-nowrap"
               >
                 {t(key)}
               </a>
@@ -63,18 +64,21 @@ export function Navbar() {
         </ul>
 
         {/* Derecha */}
-        <div className="flex items-center gap-4">
-          <LanguageToggle variant="navbar" />
+        <div className="flex items-center gap-3">
+          {/* Toggle idioma — oculto en mobile (está en el dropdown) */}
+          <div className="hidden md:flex">
+            <LanguageToggle variant="navbar" />
+          </div>
 
-          {/* CTA desktop */}
+          {/* CTA desktop — separado del toggle + ancho fijo */}
           <a
             href="#contact"
-            className="hidden md:block bg-forest-500 hover:bg-forest-400 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors duration-200 shadow-lg shadow-forest-900/40"
+            className="hidden md:flex items-center justify-center min-w-[175px] ml-3 bg-forest-500 hover:bg-forest-400 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors duration-200 shadow-lg shadow-forest-900/40 whitespace-nowrap"
           >
             {t('nav.reserve')}
           </a>
 
-          {/* Hamburger mobile */}
+          {/* Hamburger — solo mobile */}
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
             className="md:hidden text-white bg-forest-800/60 hover:bg-forest-700/60 border border-forest-600/40 rounded-xl p-2.5 transition-colors duration-200"
@@ -85,27 +89,40 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* ── Dropdown mobile ────────────────────────── */}
+      {/* ── Dropdown mobile — animación suave ──────── */}
       {menuOpen && (
-        <div className="md:hidden mt-2 bg-forest-950/80 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10">
-          <ul className="px-5 pt-5 pb-2 space-y-1">
+        <div
+          className="md:hidden mt-2 bg-forest-950/85 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10"
+          style={{ animation: 'slideDown 0.22s ease-out forwards' }}
+        >
+          {/* Nav links — centrados */}
+          <ul className="px-5 pt-5 pb-3">
             {NAV_LINKS.map(({ key, href }) => (
               <li key={key}>
                 <a
                   href={href}
                   onClick={closeMenu}
-                  className="block text-white/80 hover:text-white text-base font-medium py-3 border-b border-white/8 transition-colors duration-200 last:border-0"
+                  className="block text-white/80 hover:text-white text-base font-medium py-3.5 text-center border-b border-white/8 transition-colors duration-200 last:border-0"
                 >
                   {t(key)}
                 </a>
               </li>
             ))}
           </ul>
-          <div className="px-5 pb-5 pt-3 flex flex-col gap-4">
-            {/* Toggle idioma en el menú mobile */}
-            <div className="flex justify-center">
-              <LanguageToggle />
-            </div>
+
+          {/* Separador */}
+          <div className="mx-5 h-px bg-white/12" />
+
+          {/* Toggle idioma — centrado */}
+          <div className="flex justify-center py-4">
+            <LanguageToggle />
+          </div>
+
+          {/* Separador */}
+          <div className="mx-5 h-px bg-white/12" />
+
+          {/* CTA — centrado */}
+          <div className="px-5 py-4">
             <a
               href="#contact"
               onClick={closeMenu}
