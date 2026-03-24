@@ -147,19 +147,19 @@ export function Tours() {
               {/* Íconos de información con gradiente */}
               <div className="grid grid-cols-3 gap-3">
                 {/* Duración */}
-                <div className="rounded-2xl p-3.5 flex flex-col items-center gap-2 text-center" style={iconBoxStyle}>
+                <div className="rounded-2xl p-3.5 flex flex-col items-center gap-2 text-center min-h-[96px] justify-center" style={iconBoxStyle}>
                   <ClockIcon />
                   <span className="text-xs text-gray-500 font-medium">{t('tours.card.duration')}</span>
                   <strong className="text-sm text-gray-800">2 hrs</strong>
                 </div>
                 {/* Grupo */}
-                <div className="rounded-2xl p-3.5 flex flex-col items-center gap-2 text-center" style={iconBoxStyle}>
+                <div className="rounded-2xl p-3.5 flex flex-col items-center gap-2 text-center min-h-[96px] justify-center" style={iconBoxStyle}>
                   <GroupIcon />
                   <span className="text-xs text-gray-500 font-medium">{t('tours.card.group')}</span>
-                  <strong className="text-sm text-gray-800">2–20 {t('tours.card.people')}</strong>
+                  <strong className="text-sm text-gray-800 whitespace-nowrap">2–20 {t('tours.card.people')}</strong>
                 </div>
                 {/* Finca Natural */}
-                <div className="rounded-2xl p-3.5 flex flex-col items-center gap-2 text-center" style={iconBoxStyle}>
+                <div className="rounded-2xl p-3.5 flex flex-col items-center gap-2 text-center min-h-[96px] justify-center" style={iconBoxStyle}>
                   <FarmIcon />
                   <span className="text-xs text-gray-500 font-medium">{t('tours.card.locLabel')}</span>
                   <strong className="text-sm text-gray-800">{t('tours.card.locValue')}</strong>
@@ -178,29 +178,29 @@ export function Tours() {
 
               {/* Precio + Botones */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-1 border-t border-gray-100">
-                <div>
-                  <span className="text-xs text-gray-400 block">{t('tours.card.from')}</span>
+                <div className="min-w-[130px]">
+                  <span className="text-xs text-gray-400 block whitespace-nowrap">{t('tours.card.from')}</span>
                   <div className="flex items-baseline gap-1">
                     <span className="font-heading text-3xl font-bold text-forest-600">$50</span>
-                    <span className="text-sm text-gray-400">/ {t('tours.card.perPerson')}</span>
+                    <span className="text-sm text-gray-400 whitespace-nowrap">/ {t('tours.card.perPerson')}</span>
                   </div>
                 </div>
 
                 <div className="flex gap-3 sm:ml-auto">
-                  {/* Botón "Más Información" — relleno al hover + ícono pulsa */}
-                  <button className="group flex items-center gap-1.5 border-2 border-forest-600 text-forest-600 hover:bg-forest-600 hover:text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:shadow-md hover:shadow-forest-900/20 active:translate-y-0">
+                  {/* Botón "Más Información" — min-w fijo + relleno al hover */}
+                  <button className="group min-w-[158px] flex items-center justify-center gap-1.5 border-2 border-forest-600 text-forest-600 hover:bg-forest-600 hover:text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:shadow-md hover:shadow-forest-900/20 active:translate-y-0 whitespace-nowrap">
                     <svg
                       width="15" height="15" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                      className="transition-transform duration-250 group-hover:scale-110"
+                      className="flex-shrink-0 transition-transform duration-250 group-hover:scale-110"
                     >
                       <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
                     </svg>
                     {t('tours.card.moreInfo')}
                   </button>
-                  {/* Botón "Reservar Ahora" — flecha desliza a la derecha al hover */}
+                  {/* Botón "Reservar Ahora" — min-w fijo + flecha desliza al hover */}
                   <button
-                    className="group flex items-center gap-2 bg-forest-600 hover:bg-forest-500 text-white font-semibold px-6 py-2.5 rounded-full text-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:shadow-forest-900/30 active:translate-y-0"
+                    className="group min-w-[148px] flex items-center justify-center gap-2 bg-forest-600 hover:bg-forest-500 text-white font-semibold px-6 py-2.5 rounded-full text-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:shadow-forest-900/30 active:translate-y-0 whitespace-nowrap"
                   >
                     {t('tours.card.bookNow')}
                     <svg
