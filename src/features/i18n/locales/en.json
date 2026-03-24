@@ -33,5 +33,20 @@
       "moreInfo": "More Information",
       "bookNow": "Book Now"
     }
+  },
+  "gallery": {
+    "title": "Discover the Landscape",
+    "subtitle": "Every ride through El Abanico is a unique encounter with the nature of La Fortuna — rivers, forest trails, open fields and breathtaking views await you.",
+    "cta": "Know more about the tour",
+    "slide1Title": "River Crossings",
+    "slide1Desc": "Wade through crystal-clear streams surrounded by lush tropical forest.",
+    "slide2Title": "Forest Trails",
+    "slide2Desc": "Discover ancient paths winding through the heart of the jungle canopy.",
+    "slide3Title": "The Farm & Stables",
+    "slide3Desc": "Meet our horses at Finca El Abanico, a working natural farm in La Fortuna.",
+    "slide4Title": "Family Adventure",
+    "slide4Desc": "Perfect for all ages — our calm horses and experienced guides ensure a safe and fun ride.",
+    "slide5Title": "Sunset on the Trail",
+    "slide5Desc": "End your journey with golden light painting the sky over the rainforest valleys."
   }
 }

@@ -33,5 +33,20 @@
       "moreInfo": "Más Información",
       "bookNow": "Reservar Ahora"
     }
+  },
+  "gallery": {
+    "title": "Descubre el Paisaje",
+    "subtitle": "Cada cabalgata por El Abanico es un encuentro único con la naturaleza de La Fortuna — ríos, senderos en el bosque, campos abiertos y vistas impresionantes te esperan.",
+    "cta": "Conocer más del tour",
+    "slide1Title": "Cruces de Río",
+    "slide1Desc": "Cruza quebradas cristalinas rodeadas de exuberante bosque tropical.",
+    "slide2Title": "Senderos en el Bosque",
+    "slide2Desc": "Descubre antiguos caminos que serpentean por el corazón de la selva.",
+    "slide3Title": "La Finca y los Establos",
+    "slide3Desc": "Conoce nuestros caballos en la Finca El Abanico, una finca natural en La Fortuna.",
+    "slide4Title": "Aventura en Familia",
+    "slide4Desc": "Apta para todas las edades — nuestros caballos tranquilos y guías experimentados garantizan un paseo seguro y divertido.",
+    "slide5Title": "Atardecer en el Sendero",
+    "slide5Desc": "Termina tu recorrido con la luz dorada pintando el cielo sobre los valles de la selva."
   }
 }
