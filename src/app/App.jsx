@@ -2,6 +2,7 @@ import { AppProviders } from './providers/AppProviders'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { Tours } from './components/Tours'
+import { Gallery } from './components/Gallery'
 
 function AppContent() {
   return (
@@ -9,6 +10,7 @@ function AppContent() {
       <Navbar />
       <Hero />
       <Tours />
+      <Gallery />
     </div>
   )
 }
