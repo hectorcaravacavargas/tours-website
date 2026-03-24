@@ -38,11 +38,12 @@ export function WhatsAppButton() {
 /* page: true  → navega a otra página (no transición blur)
    page: false → scroll suave con blur a sección del home */
 const NAV_LINKS = [
-  { key: 'nav.home',     href: '#home',     page: false },
-  { key: 'nav.tours',    href: '/tours',    page: true  },
-  { key: 'nav.about',    href: '/nosotros', page: true  },
-  { key: 'nav.location', href: '#location', page: false },
-  { key: 'nav.faq',      href: '#faq',      page: false },
+  { key: 'nav.home',     href: '#home',      page: false },
+  { key: 'nav.tours',    href: '/tours',     page: true  },
+  { key: 'nav.about',    href: '/nosotros',  page: true  },
+  { key: 'nav.contact',  href: '/contacto',  page: true  },
+  { key: 'nav.location', href: '#location',  page: false },
+  { key: 'nav.faq',      href: '#faq',       page: false },
 ]
 
 export function Footer() {

@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { key: 'nav.home',    href: '/' },
   { key: 'nav.tours',   href: '/tours' },
   { key: 'nav.about',   href: '/nosotros' },
-  { key: 'nav.contact', href: '/#contact' },
+  { key: 'nav.contact', href: '/contacto' },
 ]
 
 function IconMenu() {
@@ -95,7 +95,7 @@ export function Navbar() {
           </div>
 
           <a
-            href="/#contact"
+            href="/contacto"
             className="hidden md:flex items-center justify-center min-w-[175px] ml-3 bg-forest-500 hover:bg-forest-400 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors duration-200 shadow-lg shadow-forest-900/40 whitespace-nowrap"
           >
             {t('nav.reserve')}
@@ -142,7 +142,7 @@ export function Navbar() {
 
           <div className="px-5 py-4">
             <a
-              href="/#contact"
+              href="/contacto"
               onClick={closeMenu}
               className="block w-full text-center bg-forest-500 hover:bg-forest-400 text-white font-semibold px-5 py-3.5 rounded-full transition-colors duration-200"
             >
