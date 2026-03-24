@@ -12,5 +12,26 @@
     "name": "El Abanico",
     "bookNow": "Book Now",
     "viewTours": "View Tours"
+  },
+  "tours": {
+    "title": "Horseback Riding Tours",
+    "subtitle": "Discover the natural beauty of La Fortuna on horseback, guided through forest trails and river crossings by our experienced local team.",
+    "card": {
+      "title": "Nature Trail Horseback Tour",
+      "description": "Live an authentic horseback adventure through tropical forest trails, crossing streams and discovering the breathtaking landscapes of La Fortuna alongside our skilled local guides.",
+      "duration": "Duration",
+      "group": "Group",
+      "people": "people",
+      "locLabel": "Location",
+      "locValue": "Natural Farm",
+      "check1": "Experienced local guide",
+      "check2": "Calm, well-trained horses",
+      "check3": "Bilingual guide available",
+      "check4": "All equipment included",
+      "from": "From",
+      "perPerson": "person",
+      "moreInfo": "More Information",
+      "bookNow": "Book Now"
+    }
   }
 }
