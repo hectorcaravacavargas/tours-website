@@ -2,15 +2,15 @@ import { useTranslation } from 'react-i18next'
 import img from '../../assets/hero.png'
 
 /* ── Imágenes — reemplazar src con las fotos reales ─────────── */
-const IMG_LEFT   = img   // foto tall — ej: familia a caballo
-const IMG_MID_1  = img   // foto horizontal — ej: familia en la finca
-const IMG_MID_2  = img   // foto horizontal — ej: padre cruzando río
+const IMG_LEFT   = img   // foto tall — ej: socios a caballo
+const IMG_MID_1  = img   // foto horizontal — ej: en la finca
+const IMG_MID_2  = img   // foto horizontal — ej: cruzando el río
 
 export function About() {
   const { t } = useTranslation()
 
   return (
-    <section id="about" className="bg-white py-24 px-5 md:px-8">
+    <section id="about" className="bg-white rounded-t-[2.5rem] -mt-10 relative z-10 shadow-[0_-12px_30px_-4px_rgba(0,0,0,0.08)] py-24 px-5 md:px-8">
       <div className="max-w-6xl mx-auto">
 
         {/* ── Título ──────────────────────────────────── */}
@@ -21,33 +21,34 @@ export function About() {
           {t('about.title')}
         </h2>
 
-        {/* ── Grid principal ──────────────────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        {/* ── Grid principal — items-stretch para igualar alturas ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
 
           {/* ── Imágenes ────────────────────────────────── */}
-          <div className="grid grid-cols-[1.1fr_1fr] gap-4 items-start">
+          <div className="grid grid-cols-[1.1fr_1fr] gap-4 h-full">
 
-            {/* Imagen izquierda — tall, rota a la derecha */}
-            <div className="relative">
+            {/* Imagen izquierda — ocupa toda la altura de la columna */}
+            <div className="relative flex flex-col h-full">
               <div
                 className="rounded-3xl overflow-hidden cursor-pointer will-change-transform
-                           transition-all duration-300 ease-out
+                           transition-all duration-300 ease-out flex-1
                            shadow-lg hover:shadow-2xl
-                           hover:rotate-2 hover:-translate-y-3"
+                           hover:rotate-2 hover:-translate-y-3
+                           min-h-[320px] lg:min-h-0"
               >
                 <img
                   src={IMG_LEFT}
                   alt={t('about.imgAlt1')}
-                  className="w-full object-cover"
-                  style={{ aspectRatio: '3/4' }}
+                  className="w-full h-full object-cover"
                 />
               </div>
 
               {/* Badge "Since" con gradiente */}
               <div
-                className="absolute -bottom-4 left-4 inline-flex items-center gap-2
-                           px-4 py-2 rounded-full text-white text-sm font-semibold
-                           shadow-xl shadow-forest-900/30 select-none"
+                className="absolute -bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5
+                           px-3 py-1.5 text-xs rounded-full text-white font-semibold
+                           md:gap-2 md:px-4 md:py-2 md:text-sm
+                           shadow-xl shadow-forest-900/30 select-none whitespace-nowrap"
                 style={{
                   background: 'linear-gradient(135deg, #1b4332 0%, #2d6a4f 45%, #52b788 100%)',
                 }}
@@ -59,11 +60,10 @@ export function About() {
               </div>
             </div>
 
-            {/* Columna derecha — 2 imágenes apiladas, desplazadas hacia abajo */}
-            <div className="flex flex-col gap-4 pt-8">
-              {/* Imagen media superior — rota a la izquierda */}
+            {/* Columna derecha — 2 imágenes que llenan el espacio */}
+            <div className="flex flex-col gap-4 pt-8 h-full">
               <div
-                className="rounded-2xl overflow-hidden cursor-pointer will-change-transform
+                className="flex-1 rounded-2xl overflow-hidden cursor-pointer will-change-transform
                            transition-all duration-300 ease-out
                            shadow-md hover:shadow-xl
                            hover:-rotate-2 hover:-translate-y-3"
@@ -71,13 +71,12 @@ export function About() {
                 <img
                   src={IMG_MID_1}
                   alt={t('about.imgAlt2')}
-                  className="w-full h-44 object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Imagen media inferior — rota a la derecha */}
               <div
-                className="rounded-2xl overflow-hidden cursor-pointer will-change-transform
+                className="flex-1 rounded-2xl overflow-hidden cursor-pointer will-change-transform
                            transition-all duration-300 ease-out
                            shadow-md hover:shadow-xl
                            hover:rotate-2 hover:-translate-y-3"
@@ -85,7 +84,7 @@ export function About() {
                 <img
                   src={IMG_MID_2}
                   alt={t('about.imgAlt3')}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -108,10 +107,20 @@ export function About() {
               {t('about.para2')}
             </p>
 
-            {/* Cita */}
-            <blockquote className="relative bg-stone-50 border-l-[4px] border-forest-500 rounded-xl px-6 py-5">
-              <p className="font-heading italic text-gray-700 leading-relaxed text-lg">
-                "{t('about.quote')}"
+            {/* Cita — gradiente vintage cálido con profundidad */}
+            <blockquote
+              className="relative overflow-hidden rounded-xl px-6 py-5
+                         shadow-md shadow-amber-900/10
+                         transition-all duration-300 ease-out
+                         hover:scale-[1.03] hover:-translate-y-2 cursor-default"
+              style={{
+                background: 'linear-gradient(135deg, #faf3e8 0%, #f0e4cc 55%, #e8d5b4 100%)',
+              }}
+            >
+              {/* Línea decorativa */}
+              <div className="w-10 h-0.5 bg-amber-600/40 mb-4 rounded-full" />
+              <p className="font-heading italic text-stone-700 leading-relaxed text-base">
+                {t('about.quote')}
               </p>
             </blockquote>
 
