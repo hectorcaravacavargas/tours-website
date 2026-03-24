@@ -12,5 +12,26 @@
     "name": "El Abanico",
     "bookNow": "Reservar Ahora",
     "viewTours": "Ver Tours"
+  },
+  "tours": {
+    "title": "Tours a Caballo",
+    "subtitle": "Descubre la belleza natural de La Fortuna a caballo, guiado por senderos en el bosque y cruces de ríos de la mano de nuestro experimentado equipo local.",
+    "card": {
+      "title": "Tour por Senderos Naturales a Caballo",
+      "description": "Vive una auténtica aventura ecuestre por senderos de bosque tropical, cruzando quebradas y descubriendo los impresionantes paisajes de La Fortuna junto a nuestros expertos guías locales.",
+      "duration": "Duración",
+      "group": "Grupo",
+      "people": "personas",
+      "locLabel": "Ubicación",
+      "locValue": "Finca Natural",
+      "check1": "Guía local experimentado",
+      "check2": "Caballos tranquilos y entrenados",
+      "check3": "Guía bilingüe disponible",
+      "check4": "Equipo completo incluido",
+      "from": "Desde",
+      "perPerson": "persona",
+      "moreInfo": "Más Información",
+      "bookNow": "Reservar Ahora"
+    }
   }
 }
