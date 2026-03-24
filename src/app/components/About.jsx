@@ -10,7 +10,7 @@ export function About() {
   const { t } = useTranslation()
 
   return (
-    <section id="about" className="bg-white rounded-t-[2.5rem] -mt-10 relative z-10 shadow-[0_-12px_30px_-4px_rgba(0,0,0,0.08)] py-24 px-5 md:px-8">
+    <section id="about" className="bg-white rounded-t-[2.5rem] -mt-10 relative z-10 shadow-[0_-12px_30px_-4px_rgba(0,0,0,0.08)] py-24 pb-32 px-5 md:px-8">
       <div className="max-w-6xl mx-auto">
 
         {/* ── Título ──────────────────────────────────── */}
