@@ -44,3 +44,9 @@ body {
   from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* ── Barra de progreso del carrusel ──────────────────────────── */
+@keyframes progress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
