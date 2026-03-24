@@ -4,6 +4,7 @@ import { Hero } from './components/Hero'
 import { Tours } from './components/Tours'
 import { Gallery } from './components/Gallery'
 import { About } from './components/About'
+import { Location } from './components/Location'
 
 function AppContent() {
   return (
@@ -13,6 +14,7 @@ function AppContent() {
       <Tours />
       <Gallery />
       <About />
+      <Location />
     </div>
   )
 }
