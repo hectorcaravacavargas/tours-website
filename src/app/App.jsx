@@ -8,7 +8,7 @@ import { Gallery } from './components/Gallery'
 import { About } from './components/About'
 import { Location } from './components/Location'
 import { FAQ } from './components/FAQ'
-import { Footer } from './components/Footer'
+import { Footer, WhatsAppButton } from './components/Footer'
 import { ToursPage } from './pages/ToursPage'
 
 function HomePage() {
@@ -42,6 +42,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/tours" element={<ToursPage />} />
         </Routes>
+        <WhatsAppButton />
       </BrowserRouter>
     </AppProviders>
   )
