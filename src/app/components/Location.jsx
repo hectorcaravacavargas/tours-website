@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-const DESTINATION = '10.4266613,-84.5951054'
+const DESTINATION = `${import.meta.env.VITE_MAP_LAT},${import.meta.env.VITE_MAP_LNG}`
 const MAPS_EMBED  = `https://maps.google.com/maps?q=${DESTINATION}&z=14&output=embed`
 
 function openDirections() {
@@ -8,7 +8,7 @@ function openDirections() {
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
         window.open(
-          `https://maps.google.com/maps?saddr=${coords.latitude},${coords.longitude}&daddr=${DESTINATION}&dirflg=d`,
+            `https://maps.google.com/maps?saddr=${coords.latitude},${coords.longitude}&daddr=${DESTINATION}&dirflg=d`,
           '_blank'
         )
       },

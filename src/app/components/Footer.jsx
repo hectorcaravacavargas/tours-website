@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { key: 'nav.faq',      href: '#faq',      page: false },
 ]
 
-const WA_NUMBER = '50688804133'
+const WA_NUMBER = import.meta.env.VITE_WA_NUMBER
 const WA_MSG = {
   es: 'Hola, estoy interesado en el tour a caballo. ¿Me pueden dar más información?',
   en: "Hello! I'm interested in the horseback riding tour. Can you give me more information?",
@@ -107,7 +107,7 @@ export function Footer() {
                   Hector Alonso Caravaca Vargas
                 </strong>
               </p>
-              <p className="text-gray-400 text-xs mt-0.5">hcaravacvargas@gmail.com</p>
+              <p className="text-gray-400 text-xs mt-0.5">{import.meta.env.VITE_DEV_EMAIL}</p>
             </div>
           </div>
 
