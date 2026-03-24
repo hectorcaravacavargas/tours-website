@@ -59,17 +59,17 @@ export function Hero() {
             </h2>
           </div>
 
-          {/* Botones */}
+          {/* Botones — min-w fijo para evitar layout shift al cambiar idioma */}
           <div className="flex items-center gap-3 mt-1">
             <a
               href="#contact"
-              className="bg-forest-500 hover:bg-forest-400 text-white font-semibold px-6 md:px-7 py-3 rounded-full transition-colors duration-200 shadow-lg shadow-forest-900/50 text-sm md:text-base"
+              className="min-w-[158px] flex items-center justify-center bg-forest-500 hover:bg-forest-400 text-white font-semibold px-6 md:px-7 py-3 rounded-full transition-colors duration-200 shadow-lg shadow-forest-900/50 text-sm md:text-base whitespace-nowrap"
             >
               {t('hero.bookNow')}
             </a>
             <a
               href="#tours"
-              className="bg-white/15 backdrop-blur-sm hover:bg-white/25 text-white font-semibold px-6 md:px-7 py-3 rounded-full border border-white/25 transition-colors duration-200 text-sm md:text-base"
+              className="min-w-[120px] flex items-center justify-center bg-white/15 backdrop-blur-sm hover:bg-white/25 text-white font-semibold px-6 md:px-7 py-3 rounded-full border border-white/25 transition-colors duration-200 text-sm md:text-base whitespace-nowrap"
             >
               {t('hero.viewTours')}
             </a>
@@ -77,19 +77,39 @@ export function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 animate-bounce">
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
+        <button
+          onClick={() => {
+            const tours = document.getElementById('tours')
+            if (!tours) return
+            tours.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }}
+          aria-label="Scroll to tours"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2
+                     group flex flex-col items-center gap-1 cursor-pointer
+                     focus:outline-none"
+        >
+          {/* Píldora con blur + rebote */}
+          <span
+            className="flex items-center justify-center
+                       w-10 h-10 rounded-full
+                       bg-white/10 backdrop-blur-md
+                       border border-white/20
+                       shadow-lg shadow-black/20
+                       text-white/50 group-hover:text-white
+                       group-hover:bg-white/20 group-hover:border-white/40
+                       group-hover:shadow-xl group-hover:shadow-black/30
+                       transition-all duration-300
+                       animate-bounce"
           >
-            <path d="M6 9l6 6 6-6" />
-          </svg>
-        </div>
+            <svg
+              width="20" height="20" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor"
+              strokeWidth="2" strokeLinecap="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </span>
+        </button>
       </div>
 
       {/* ── Columna derecha — solo desktop ──────── */}
