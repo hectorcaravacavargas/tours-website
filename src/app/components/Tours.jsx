@@ -77,8 +77,9 @@ export function Tours() {
         >
           <defs>
             {/* Sombra proyectada hacia arriba — da profundidad 3D */}
-            <filter id="foldShadow" x="-10%" y="-80%" width="120%" height="200%">
-              <feDropShadow dx="0" dy="-6" stdDeviation="10" floodColor="rgba(0,0,0,0.5)" />
+            <filter id="foldShadow" x="-10%" y="-100%" width="120%" height="250%">
+              <feDropShadow dx="0" dy="-4" stdDeviation="6"  floodColor="rgba(0,0,0,0.55)" result="s1" />
+              <feDropShadow dx="0" dy="-14" stdDeviation="22" floodColor="rgba(0,0,0,0.30)" />
             </filter>
           </defs>
 
