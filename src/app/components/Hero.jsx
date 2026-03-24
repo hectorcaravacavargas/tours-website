@@ -1,16 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-/*
- * Imágenes locales — agregá en src/assets/:
- *   horse1.jpg  → columna izquierda  (solo desktop)
- *   horse2.jpg  → columna central    (visible en mobile y desktop)
- *   horse3.jpg  → columna derecha    (solo desktop)
- *
- * Por ahora usamos hero.png como placeholder para las 3.
- */
-import horse1 from '../../assets/hero.png'
-import horse2 from '../../assets/hero.png'
-import horse3 from '../../assets/hero.png'
+import image1 from '../../assets/hero.png'
 
 export function Hero() {
   const { t } = useTranslation()
@@ -25,7 +15,7 @@ export function Hero() {
       {/* ── Columna izquierda — solo desktop ───── */}
       <div className="hidden md:block md:w-[28%] relative rounded-2xl overflow-hidden flex-shrink-0">
         <img
-          src={horse1}
+          src={image1}
           alt="Tour a caballo"
           className="w-full h-full object-cover"
         />
@@ -35,7 +25,7 @@ export function Hero() {
       {/* ── Columna central — visible siempre ──── */}
       <div className="flex-1 relative md:rounded-2xl overflow-hidden">
         <img
-          src={horse2}
+          src={image1}
           alt="Tour de Caballos El Abanico"
           className="w-full h-full object-cover"
         />
@@ -105,7 +95,7 @@ export function Hero() {
       {/* ── Columna derecha — solo desktop ──────── */}
       <div className="hidden md:block md:w-[28%] relative rounded-2xl overflow-hidden flex-shrink-0">
         <img
-          src={horse3}
+          src={image1}
           alt="Tour a caballo"
           className="w-full h-full object-cover"
         />
