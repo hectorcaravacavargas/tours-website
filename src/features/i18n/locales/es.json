@@ -49,6 +49,42 @@
     "para3bold": "sencillez, autenticidad y el corazón",
     "para3b": "que solo una aventura familiar puede ofrecer de verdad."
   },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Todo lo que necesitas saber sobre nuestro tour a caballo",
+    "q1": {
+      "q": "¿Se requiere experiencia previa montando a caballo?",
+      "a": "No se necesita experiencia. Nuestros caballos son tranquilos y bien entrenados, y el guía te dará una orientación breve antes de salir. Ideal para principiantes."
+    },
+    "q2": {
+      "q": "¿Es el tour apto para niños?",
+      "a": "¡Claro que sí! El recorrido está diseñado para todas las edades. Nuestros caballos son mansos y los guías tienen experiencia con niños. Los menores deben ir acompañados de un adulto."
+    },
+    "q3": {
+      "q": "¿Los niños pagan un precio diferente?",
+      "a": "Sí, ofrecemos tarifa reducida para niños menores de 12 años. Contáctenos para conocer los precios exactos — nos encanta recibir familias."
+    },
+    "q4": {
+      "q": "¿Es seguro el tour?",
+      "a": "La seguridad es nuestra prioridad. Todos los jinetes reciben casco, nuestros caballos están entrenados para senderos y un guía experimentado acompaña al grupo en todo momento."
+    },
+    "q5": {
+      "q": "¿Qué veremos durante el recorrido?",
+      "a": "Recorrerás senderos de bosque tropical, cruzarás quebradas de agua cristalina y disfrutarás de vistas impresionantes del Volcán Arenal y las montañas de La Fortuna."
+    },
+    "q6": {
+      "q": "¿Cuánto dura el tour?",
+      "a": "El tour estándar dura aproximadamente 2.5 a 3 horas. También ofrecemos opciones extendidas — consulta sobre experiencias personalizadas."
+    },
+    "q7": {
+      "q": "¿Qué ropa debo usar?",
+      "a": "Usa pantalón largo cómodo y zapatos cerrados. Trae protector solar, una chaqueta ligera y una pequeña botella de agua. Los cascos son provistos sin costo adicional."
+    },
+    "q8": {
+      "q": "¿Qué pasa si llueve?",
+      "a": "Costa Rica es tropical — ¡la lluvia suave es parte de la magia! En caso de lluvia fuerte o tormenta, trabajaremos contigo para reprogramar sin costo adicional."
+    }
+  },
   "location": {
     "title": "Cómo Llegar",
     "subtitle": "La Finca El Abanico se encuentra a pocos minutos del centro de La Fortuna, cerca del Volcán Arenal. Desde el parque central, tome la Ruta 702 hacia el sur en dirección a Chachagua — nos encontrará en el camino.",

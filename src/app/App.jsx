@@ -5,6 +5,7 @@ import { Tours } from './components/Tours'
 import { Gallery } from './components/Gallery'
 import { About } from './components/About'
 import { Location } from './components/Location'
+import { FAQ } from './components/FAQ'
 
 function AppContent() {
   return (
@@ -15,6 +16,7 @@ function AppContent() {
       <Gallery />
       <About />
       <Location />
+      <FAQ />
     </div>
   )
 }

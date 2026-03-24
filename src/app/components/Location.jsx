@@ -31,7 +31,7 @@ export function Location() {
   const { t } = useTranslation()
 
   return (
-    <section id="location" className="bg-white pt-28 pb-20 px-5 md:px-8">
+    <section id="location" className="bg-white relative z-20 rounded-b-[2.5rem] shadow-[0_14px_32px_-4px_rgba(0,0,0,0.10)] pt-28 pb-32 px-5 md:px-8">
       <div className="max-w-5xl mx-auto">
 
         {/* ── Cabecera ─────────────────────────────────── */}

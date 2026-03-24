@@ -49,6 +49,42 @@
     "para3bold": "simplicity, authenticity, and heart",
     "para3b": "that only a family-run adventure can truly offer."
   },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our horseback riding tour",
+    "q1": {
+      "q": "Is prior horseback riding experience required?",
+      "a": "No experience needed. Our horses are calm and well-trained, and your guide will give you a brief orientation before the ride. Perfect for first-timers."
+    },
+    "q2": {
+      "q": "Is the tour suitable for children?",
+      "a": "Absolutely. The tour is designed for all ages. Our horses are gentle and our guides are experienced with young riders. Children must be accompanied by an adult."
+    },
+    "q3": {
+      "q": "Do children pay a different price?",
+      "a": "Yes, we offer a reduced rate for children under 12. Contact us for exact pricing — we love welcoming families."
+    },
+    "q4": {
+      "q": "Is the horseback riding tour safe?",
+      "a": "Safety is our top priority. All riders receive helmets, our horses are trained for trail riding, and an experienced guide accompanies the group at all times."
+    },
+    "q5": {
+      "q": "What will we see during the tour?",
+      "a": "You'll ride through tropical forest trails, cross crystal-clear streams, and enjoy stunning views of the Arenal Volcano and the mountains surrounding La Fortuna."
+    },
+    "q6": {
+      "q": "How long does the tour last?",
+      "a": "The standard tour lasts approximately 2.5 to 3 hours. We also offer extended options — ask us about custom experiences."
+    },
+    "q7": {
+      "q": "What should I wear for the tour?",
+      "a": "Wear comfortable long pants and closed-toe shoes. Bring sunscreen, a light jacket, and a small water bottle. Helmets are provided at no extra cost."
+    },
+    "q8": {
+      "q": "What happens if it rains?",
+      "a": "Costa Rica is tropical — light rain is part of the magic! For heavy rain or storms, we will work with you to reschedule at no extra cost."
+    }
+  },
   "location": {
     "title": "How to Find Us",
     "subtitle": "Finca El Abanico is located just a few minutes from downtown La Fortuna, near the Arenal Volcano. From the central park, take Route 702 south toward Chachagua — you will find us along the way.",
