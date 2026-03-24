@@ -40,7 +40,7 @@ export function WhatsAppButton() {
 const NAV_LINKS = [
   { key: 'nav.home',     href: '#home',     page: false },
   { key: 'nav.tours',    href: '/tours',    page: true  },
-  { key: 'nav.about',    href: '#about',    page: true  },
+  { key: 'nav.about',    href: '/nosotros', page: true  },
   { key: 'nav.location', href: '#location', page: false },
   { key: 'nav.faq',      href: '#faq',      page: false },
 ]

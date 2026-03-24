@@ -10,6 +10,7 @@ import { Location } from './components/Location'
 import { FAQ } from './components/FAQ'
 import { Footer, WhatsAppButton } from './components/Footer'
 import { ToursPage } from './pages/ToursPage'
+import { AboutPage } from './pages/AboutPage'
 
 function HomePage() {
   useEffect(() => {
@@ -41,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/tours" element={<ToursPage />} />
+          <Route path="/nosotros" element={<AboutPage />} />
         </Routes>
         <WhatsAppButton />
       </BrowserRouter>
