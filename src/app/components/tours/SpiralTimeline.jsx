@@ -173,7 +173,7 @@ export function SpiralTimeline() {
   const { t } = useTranslation()
 
   return (
-    <section className="bg-white relative z-20 rounded-b-[2.5rem] shadow-[0_14px_32px_-4px_rgba(0,0,0,0.10)] pb-20 px-5 md:px-8">
+    <section className="bg-white relative z-20 shadow-[0_14px_32px_-4px_rgba(0,0,0,0.10)] pb-20 px-5 md:px-8">
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
