@@ -1,7 +1,31 @@
 import { useTranslation } from 'react-i18next'
 
-const MAPS_EMBED = 'https://maps.google.com/maps?q=10.4266613,-84.5951054&z=14&output=embed'
-const MAPS_DIRECTIONS = 'https://www.google.com/maps/dir/?api=1&destination=10.4266613,-84.5951054&travelmode=driving'
+const DESTINATION = '10.4266613,-84.5951054'
+const MAPS_EMBED  = `https://maps.google.com/maps?q=${DESTINATION}&z=14&output=embed`
+
+function openDirections() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        window.open(
+          `https://maps.google.com/maps?saddr=${coords.latitude},${coords.longitude}&daddr=${DESTINATION}&dirflg=d`,
+          '_blank'
+        )
+      },
+      () => {
+        window.open(
+          `https://maps.google.com/maps?saddr=My+Location&daddr=${DESTINATION}&dirflg=d`,
+          '_blank'
+        )
+      }
+    )
+  } else {
+    window.open(
+      `https://maps.google.com/maps?saddr=My+Location&daddr=${DESTINATION}&dirflg=d`,
+      '_blank'
+    )
+  }
+}
 
 export function Location() {
   const { t } = useTranslation()
@@ -55,16 +79,14 @@ export function Location() {
             <div className="flex-1" />
 
             <div>
-              <a
-                href={MAPS_DIRECTIONS}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={openDirections}
                 className="group flex items-center justify-center gap-2
                            bg-white text-gray-900 font-semibold
                            px-6 py-3 rounded-xl w-full text-sm
                            hover:bg-gray-50 hover:-translate-y-0.5
                            hover:shadow-lg hover:shadow-black/20
-                           transition-all duration-200"
+                           transition-all duration-200 cursor-pointer"
               >
                 {t('location.getDirections')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -73,7 +95,7 @@ export function Location() {
                   <line x1="5" y1="12" x2="19" y2="12"/>
                   <polyline points="12 5 19 12 12 19"/>
                 </svg>
-              </a>
+              </button>
               <p className="text-white/40 text-xs text-center mt-2.5">
                 {t('location.fromCenter')}
               </p>
