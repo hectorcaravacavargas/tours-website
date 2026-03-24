@@ -73,8 +73,10 @@ export function Gallery() {
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
       >
-        {/* Track */}
-        <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-gray-200/60">
+        {/* Track — sombra dimensional para dar profundidad */}
+        <div className="relative rounded-3xl overflow-hidden
+                        shadow-[0_20px_60px_-10px_rgba(0,0,0,0.22),0_8px_24px_-6px_rgba(0,0,0,0.14)]
+                        ring-1 ring-black/6">
           {/* Slides */}
           <div
             className="flex transition-transform duration-700 ease-in-out"
@@ -135,11 +137,11 @@ export function Gallery() {
             <ChevronRight />
           </button>
 
-          {/* Barra de progreso */}
-          <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/20">
+          {/* Barra de progreso — verde */}
+          <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/20">
             <div
               key={`${current}-${hovering}`}
-              className="h-full bg-white/60"
+              className="h-full bg-forest-400"
               style={{
                 animation: hovering
                   ? 'none'
