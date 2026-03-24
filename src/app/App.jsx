@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AppProviders } from './providers/AppProviders'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
@@ -7,8 +8,9 @@ import { About } from './components/About'
 import { Location } from './components/Location'
 import { FAQ } from './components/FAQ'
 import { Footer } from './components/Footer'
+import { ToursPage } from './pages/ToursPage'
 
-function AppContent() {
+function HomePage() {
   return (
     <div className="bg-forest-950 min-h-screen">
       <Navbar />
@@ -26,7 +28,12 @@ function AppContent() {
 function App() {
   return (
     <AppProviders>
-      <AppContent />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/tours" element={<ToursPage />} />
+        </Routes>
+      </BrowserRouter>
     </AppProviders>
   )
 }

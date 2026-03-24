@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next'
 import { LanguageToggle } from '../../features/i18n/components/LanguageToggle'
 
 const NAV_LINKS = [
-  { key: 'nav.home',    href: '#home' },
+  { key: 'nav.home',    href: '/' },
   { key: 'nav.tours',   href: '/tours' },
-  { key: 'nav.about',   href: '#about' },
-  { key: 'nav.contact', href: '#contact' },
+  { key: 'nav.about',   href: '/#about' },
+  { key: 'nav.contact', href: '/#contact' },
 ]
 
 function IconMenu() {
@@ -37,14 +37,13 @@ export function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       const current = window.scrollY
-      // Siempre visible en el top
       if (current < 10) {
         setVisible(true)
       } else if (current < lastScrollY.current) {
-        // Subiendo → mostrar
+        // Scrolling up → show
         setVisible(true)
       } else if (current > lastScrollY.current + 6) {
-        // Bajando (con umbral de 6px para evitar micro-movimientos) → ocultar
+        // Scrolling down → hide
         setVisible(false)
         setMenuOpen(false)
       }
@@ -66,7 +65,7 @@ export function Navbar() {
       <div className="bg-forest-950/70 backdrop-blur-md rounded-2xl flex items-center justify-between px-5 py-3.5">
 
         {/* Logo */}
-        <a href="#home" onClick={closeMenu} className="flex items-center gap-3">
+        <a href="/" onClick={closeMenu} className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full border border-forest-400/50 bg-forest-800/60 flex items-center justify-center">
             <span className="text-xl leading-none select-none">🐴</span>
           </div>
@@ -75,7 +74,7 @@ export function Navbar() {
           </span>
         </a>
 
-        {/* Links — solo desktop, ancho fijo para evitar layout shift */}
+        {/* Links — desktop */}
         <ul className="hidden md:flex items-center justify-between w-[320px]">
           {NAV_LINKS.map(({ key, href }) => (
             <li key={key}>
@@ -91,22 +90,20 @@ export function Navbar() {
 
         {/* Derecha */}
         <div className="flex items-center gap-3">
-          {/* Toggle idioma — oculto en mobile (está en el dropdown) */}
           <div className="hidden md:flex">
             <LanguageToggle variant="navbar" />
           </div>
 
-          {/* CTA desktop — separado del toggle + ancho fijo */}
           <a
-            href="#contact"
+            href="/#contact"
             className="hidden md:flex items-center justify-center min-w-[175px] ml-3 bg-forest-500 hover:bg-forest-400 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors duration-200 shadow-lg shadow-forest-900/40 whitespace-nowrap"
           >
             {t('nav.reserve')}
           </a>
 
-          {/* Hamburger — solo mobile */}
+          {/* Hamburger — mobile */}
           <button
-            onClick={() => setMenuOpen((prev) => !prev)}
+            onClick={() => setMenuOpen(prev => !prev)}
             className="md:hidden text-white bg-forest-800/60 hover:bg-forest-700/60 border border-forest-600/40 rounded-xl p-2.5 transition-colors duration-200"
             aria-label="Menu"
           >
@@ -115,13 +112,12 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* ── Dropdown mobile — animación suave ──────── */}
+      {/* ── Dropdown mobile ─────────────────────────── */}
       {menuOpen && (
         <div
           className="md:hidden mt-2 bg-forest-950/85 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10"
           style={{ animation: 'slideDown 0.22s ease-out forwards' }}
         >
-          {/* Nav links — centrados */}
           <ul className="px-5 pt-5 pb-3">
             {NAV_LINKS.map(({ key, href }) => (
               <li key={key}>
@@ -136,21 +132,17 @@ export function Navbar() {
             ))}
           </ul>
 
-          {/* Separador */}
           <div className="mx-5 h-px bg-white/12" />
 
-          {/* Toggle idioma — centrado */}
           <div className="flex justify-center py-4">
             <LanguageToggle />
           </div>
 
-          {/* Separador */}
           <div className="mx-5 h-px bg-white/12" />
 
-          {/* CTA — centrado */}
           <div className="px-5 py-4">
             <a
-              href="#contact"
+              href="/#contact"
               onClick={closeMenu}
               className="block w-full text-center bg-forest-500 hover:bg-forest-400 text-white font-semibold px-5 py-3.5 rounded-full transition-colors duration-200"
             >
