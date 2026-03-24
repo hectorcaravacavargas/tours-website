@@ -6,7 +6,38 @@ const IMG_LEFT   = img   // foto tall — ej: socios a caballo
 const IMG_MID_1  = img   // foto horizontal — ej: en la finca
 const IMG_MID_2  = img   // foto horizontal — ej: cruzando el río
 
-export function About() {
+/* ── Caballos — reemplazar src con las fotos reales ────────── */
+const HORSES = [
+  { name: 'Careta',  src: img },
+  { name: 'Lucero',  src: img },
+  { name: 'Mamona',  src: img },
+  { name: 'Canela',  src: img },
+  { name: 'Peluso',  src: img },
+]
+
+function HorseCard({ name, src, idx }) {
+  const rotateClass = idx % 2 === 0 ? 'hover:rotate-3' : 'hover:-rotate-3'
+  return (
+    <div
+      className={`bg-white rounded-2xl p-3 pb-5 shadow-md relative
+                  transition-all duration-300 ease-out cursor-default
+                  hover:scale-[1.08] hover:shadow-xl hover:z-10
+                  ${rotateClass}`}
+    >
+      <div className="rounded-xl overflow-hidden aspect-[4/5]">
+        <img src={src} alt={name} className="w-full h-full object-cover" />
+      </div>
+      <p
+        className="text-center mt-3 text-gray-700 text-lg"
+        style={{ fontFamily: "'Dancing Script', cursive" }}
+      >
+        {name}
+      </p>
+    </div>
+  )
+}
+
+export function About({ showHorses = false }) {
   const { t } = useTranslation()
 
   return (
@@ -134,6 +165,35 @@ export function About() {
             </p>
           </div>
         </div>
+
+        {/* ── Galería de caballos (solo en AboutPage) ─── */}
+        {showHorses && (
+          <div className="mt-24">
+            {/* Header */}
+            <div className="text-center mb-12">
+              <p className="text-forest-600 text-xs tracking-[0.18em] uppercase font-semibold mb-2">
+                {t('horses.badge')}
+              </p>
+              <h2
+                className="font-heading font-bold text-gray-900 leading-tight mb-4"
+                style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)' }}
+              >
+                {t('horses.title')}
+              </h2>
+              <p className="text-gray-500 max-w-xl mx-auto leading-relaxed">
+                {t('horses.subtitle')}
+              </p>
+            </div>
+
+            {/* Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+              {HORSES.map(({ name, src }, i) => (
+                <HorseCard key={name} name={name} src={src} idx={i} />
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     </section>
   )

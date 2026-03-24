@@ -14,7 +14,7 @@ export function AboutPage() {
         style={{ animation: 'fadeSlideUp 0.55s ease-out forwards', opacity: 0 }}
       >
         <div className="bg-forest-950 pt-32 pb-20" />
-        <About />
+        <About showHorses />
         <Footer />
       </div>
     </>

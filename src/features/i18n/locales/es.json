@@ -120,6 +120,11 @@
     "item6Title": "Muda Extra de Ropa",
     "item6Desc": "Recomendado para la lluvia o los cruces de ríos."
   },
+  "horses": {
+    "badge": "El Equipo",
+    "title": "Conoce Nuestros Caballos",
+    "subtitle": "Cada uno con su propia personalidad — tranquilos, entrenados y listos para llevarte a vivir una aventura única."
+  },
   "toursPage": {
     "badge": "Experiencia Ecuestre",
     "videoTitle": "Ve el Tour en Acción",

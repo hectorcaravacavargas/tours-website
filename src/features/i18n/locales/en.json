@@ -120,6 +120,11 @@
     "item6Title": "Extra Change of Clothes",
     "item6Desc": "Recommended for rain or river crossings."
   },
+  "horses": {
+    "badge": "The Team",
+    "title": "Meet Our Horses",
+    "subtitle": "Each one with their own personality — calm, trained, and ready to take you on a one-of-a-kind adventure."
+  },
   "toursPage": {
     "badge": "Horseback Riding Experience",
     "videoTitle": "See the Tour in Action",
