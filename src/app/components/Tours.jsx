@@ -156,7 +156,9 @@ export function Tours() {
                 <div className="rounded-2xl p-3.5 flex flex-col items-center gap-2 text-center min-h-[96px] justify-center" style={iconBoxStyle}>
                   <GroupIcon />
                   <span className="text-xs text-gray-500 font-medium">{t('tours.card.group')}</span>
-                  <strong className="text-sm text-gray-800 whitespace-nowrap">2–20 {t('tours.card.people')}</strong>
+                  <strong className="text-sm text-gray-800 leading-tight text-center">
+                    2–20<br />{t('tours.card.people')}
+                  </strong>
                 </div>
                 {/* Finca Natural */}
                 <div className="rounded-2xl p-3.5 flex flex-col items-center gap-2 text-center min-h-[96px] justify-center" style={iconBoxStyle}>
