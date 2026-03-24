@@ -51,7 +51,7 @@ function ContactForm() {
                     focus:ring-2 focus:ring-forest-100 transition-all duration-200 bg-white`
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_8px_32px_-4px_rgba(0,0,0,0.10)] p-8">
       {/* Header */}
       <p className="text-forest-600 text-xs tracking-[0.18em] uppercase font-semibold mb-1">
         {t('contactPage.badge')}
@@ -183,7 +183,7 @@ function InfoPanel() {
 
       {/* Direct line card */}
       <div
-        className="rounded-2xl p-7"
+        className="rounded-2xl p-7 shadow-[0_8px_32px_-4px_rgba(0,0,0,0.10)]"
         style={{ background: 'radial-gradient(circle at 20% 20%, #d8f3dc 0%, #b7e4c7 100%)' }}
       >
         <p className="text-forest-700 text-xs tracking-[0.18em] uppercase font-semibold mb-3">
@@ -221,7 +221,7 @@ function InfoPanel() {
       </div>
 
       {/* Important info card */}
-      <div className="rounded-2xl border border-gray-100 bg-white p-7 flex flex-col gap-6">
+      <div className="rounded-2xl border border-gray-100 bg-white p-7 flex flex-col gap-6 shadow-[0_8px_32px_-4px_rgba(0,0,0,0.10)]">
         <p className="font-heading font-bold text-gray-900 text-base">
           {t('contactPage.infoTitle')}
         </p>
