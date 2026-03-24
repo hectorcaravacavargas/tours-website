@@ -34,6 +34,21 @@
       "bookNow": "Book Now"
     }
   },
+  "about": {
+    "title": "A Dream Born from the Heart",
+    "since": "Since March 2025",
+    "imgAlt1": "Family riding horses at El Abanico",
+    "imgAlt2": "The family at the farm",
+    "imgAlt3": "River crossing on horseback",
+    "para1a": "It all started with a",
+    "para1bold": "life-changing decision.",
+    "para1b": "After years of working the land and raising horses in La Fortuna, our father chose to share the beauty surrounding us with the world — and to let nature be the guide.",
+    "para2": "That decision became this family project: a place where our horses, our trails, and the untouched nature of Costa Rica come together to create memories that visitors carry home forever. We are not a company. We are a family that opens the gates of its home.",
+    "quote": "You won't find the luxury of a hotel here — but you will find something far more powerful: the warmth of a family that rides beside you, the silence of the forest, and the feeling that, for a moment, the world slowed down just for you.",
+    "para3a": "In 2025, we took our first steps into the digital world. Come and be part of our story, and discover the",
+    "para3bold": "simplicity, authenticity, and heart",
+    "para3b": "that only a family-run adventure can truly offer."
+  },
   "gallery": {
     "title": "Discover the Landscape",
     "subtitle": "Every ride through El Abanico is a unique encounter with the nature of La Fortuna — rivers, forest trails, open fields and breathtaking views await you.",

@@ -34,6 +34,21 @@
       "bookNow": "Reservar Ahora"
     }
   },
+  "about": {
+    "title": "Un Sueño Nacido del Corazón",
+    "since": "Desde marzo de 2025",
+    "imgAlt1": "Familia montando caballos en El Abanico",
+    "imgAlt2": "La familia en la finca",
+    "imgAlt3": "Cruzando el río a caballo",
+    "para1a": "Todo comenzó con una",
+    "para1bold": "decisión que cambió nuestra vida.",
+    "para1b": "Después de años trabajando la tierra y criando caballos en La Fortuna, nuestro padre eligió compartir la belleza que nos rodea con el mundo — y dejar que la naturaleza fuera la guía.",
+    "para2": "Esa decisión se convirtió en este proyecto familiar: un lugar donde nuestros caballos, nuestros senderos y la naturaleza intacta de Costa Rica se unen para crear recuerdos que los visitantes llevan consigo para siempre. No somos una empresa. Somos una familia que abre las puertas de su hogar.",
+    "quote": "Aquí no encontrarás el lujo de un hotel — pero encontrarás algo mucho más poderoso: el calor de una familia que cabalga a tu lado, el silencio del bosque y la sensación de que, por un momento, el mundo se detuvo solo para ti.",
+    "para3a": "En 2025, dimos nuestros primeros pasos en el mundo digital. Ven a ser parte de nuestra historia, y descubre la",
+    "para3bold": "sencillez, autenticidad y el corazón",
+    "para3b": "que solo una aventura familiar puede ofrecer de verdad."
+  },
   "gallery": {
     "title": "Descubre el Paisaje",
     "subtitle": "Cada cabalgata por El Abanico es un encuentro único con la naturaleza de La Fortuna — ríos, senderos en el bosque, campos abiertos y vistas impresionantes te esperan.",
