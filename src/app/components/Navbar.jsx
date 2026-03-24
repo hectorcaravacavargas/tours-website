@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LanguageToggle } from '../../features/i18n/components/LanguageToggle'
 
@@ -31,11 +31,37 @@ function IconClose() {
 export function Navbar() {
   const { t } = useTranslation()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [visible, setVisible] = useState(true)
+  const lastScrollY = useRef(0)
+
+  useEffect(() => {
+    const onScroll = () => {
+      const current = window.scrollY
+      // Siempre visible en el top
+      if (current < 10) {
+        setVisible(true)
+      } else if (current < lastScrollY.current) {
+        // Subiendo → mostrar
+        setVisible(true)
+      } else if (current > lastScrollY.current + 6) {
+        // Bajando (con umbral de 6px para evitar micro-movimientos) → ocultar
+        setVisible(false)
+        setMenuOpen(false)
+      }
+      lastScrollY.current = current
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const closeMenu = () => setMenuOpen(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 p-3">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 p-3 transition-transform duration-300 ease-in-out"
+      style={{ transform: visible ? 'translateY(0)' : 'translateY(-110%)' }}
+    >
       {/* ── Barra principal ────────────────────────── */}
       <div className="bg-forest-950/70 backdrop-blur-md rounded-2xl flex items-center justify-between px-5 py-3.5">
 
