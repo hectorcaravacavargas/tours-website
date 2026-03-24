@@ -29,8 +29,7 @@ const STOPS = [
  * Negative vertical margin (-16px each side) makes the line visually
  * "exit" the bottom of one card and "enter" the top of the next.
  */
-function Connector({ imageLeft, idx }) {
-  const gradId = `tlG${idx}`
+function Connector({ imageLeft }) {
 
   /* Desktop paths */
   const dDesk = imageLeft
@@ -43,7 +42,7 @@ function Connector({ imageLeft, idx }) {
     : 'M 65 0 C 80 30, 20 30, 35 60'        /* top-right → bottom-left */
 
   return (
-    <div className="relative z-0">
+    <div>
 
       {/* ── Desktop S-curve ── */}
       <div className="hidden lg:block px-0">
@@ -53,16 +52,9 @@ function Connector({ imageLeft, idx }) {
           fill="none"
           preserveAspectRatio="none"
         >
-          <defs>
-            <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%"   stopColor="#2d6a4f" stopOpacity="0.90" />
-              <stop offset="50%"  stopColor="#92400e" stopOpacity="0.60" />
-              <stop offset="100%" stopColor="#2d6a4f" stopOpacity="0.90" />
-            </linearGradient>
-          </defs>
           <path
             d={dDesk}
-            stroke={`url(#${gradId})`}
+            stroke="rgba(0,0,0,0.18)"
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeDasharray="12 8"
@@ -77,15 +69,9 @@ function Connector({ imageLeft, idx }) {
           className="w-40 h-16"
           fill="none"
         >
-          <defs>
-            <linearGradient id={`${gradId}m`} x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%"   stopColor="#2d6a4f" stopOpacity="0.85" />
-              <stop offset="100%" stopColor="#92400e" stopOpacity="0.55" />
-            </linearGradient>
-          </defs>
           <path
             d={dMob}
-            stroke={`url(#${gradId}m)`}
+            stroke="rgba(0,0,0,0.18)"
             strokeWidth="2"
             strokeLinecap="round"
             strokeDasharray="8 5"
@@ -108,20 +94,12 @@ function Stop({ stop, idx }) {
   const imageLeft = idx % 2 === 0
 
   const imgBlock = (
-    <div
-        className={`rounded-[1.75rem] overflow-hidden
-                    shadow-[0_10px_40px_-8px_rgba(0,0,0,0.14)]
-                    cursor-pointer will-change-transform
-                    transition-all duration-300 ease-out
-                    hover:-translate-y-3
-                    hover:shadow-[0_22px_52px_-8px_rgba(0,0,0,0.22)]
-                    ${imageLeft ? 'hover:rotate-[1.5deg]' : 'hover:-rotate-[1.5deg]'}`}
-    >
+    <div className="rounded-[1.75rem] overflow-hidden shadow-[0_10px_40px_-8px_rgba(0,0,0,0.14)]">
       <img
         src={stop.src}
         alt={t(stop.titleKey)}
         className="w-full h-64 lg:h-[26rem] object-cover
-                   transition-transform duration-500 ease-out hover:scale-[1.04]"
+                   transition-transform duration-300 ease-out hover:scale-[1.04]"
       />
     </div>
   )
@@ -133,7 +111,7 @@ function Stop({ stop, idx }) {
         className="font-heading font-bold leading-none select-none -mb-2"
         style={{
           fontSize: 'clamp(4.5rem, 9vw, 6.5rem)',
-          color: 'rgba(45,106,79,0.07)',
+          color: 'rgba(0,0,0,0.04)',
         }}
       >
         {stop.num}
@@ -212,15 +190,24 @@ export function SpiralTimeline() {
           <div className="mx-auto mt-6 w-14 h-0.5 bg-gray-200 rounded-full" />
         </div>
 
-        {/* Stops + connectors */}
+        {/* Stops + connectors
+            Each stop shares a z-10 stacking context with its own connector.
+            Because later DOM siblings with equal z-index paint on top,
+            stop N+1 always covers stop N's connector — images stay above lines. */}
         {STOPS.map((stop, i) => (
-          <div key={stop.num}>
-            {/* z-10 so stop always renders above the connector lines */}
-            <div className="relative z-10">
-              <Stop stop={stop} idx={i} />
-            </div>
+          <div key={stop.num} className="relative z-10">
+            <Stop stop={stop} idx={i} />
             {i < STOPS.length - 1 && (
-              <Connector imageLeft={i % 2 === 0} idx={i} />
+              /*
+               * z-index: -1 within the stop's stacking context (z-10) makes the
+               * connector paint BEHIND the current stop's image (z=auto = 0).
+               * The stop wrapper is transparent, so the line stays visible against
+               * the white section background. The next stop (later in DOM, same z-10)
+               * also paints above this connector.
+               */
+              <div style={{ position: 'relative', zIndex: -1 }}>
+                <Connector imageLeft={i % 2 === 0} />
+              </div>
             )}
           </div>
         ))}

@@ -93,8 +93,8 @@ export function WhatToBringSection() {
   const { t } = useTranslation()
 
   return (
-    <section className="bg-white relative z-10 rounded-t-[2.5rem] -mt-10
-                        shadow-[0_-12px_30px_-4px_rgba(0,0,0,0.08)]
+    <section className="bg-white relative z-30 rounded-t-[2.5rem] -mt-10
+                        shadow-[0_-10px_30px_-4px_rgba(0,0,0,0.12)]
                         pt-20 pb-24 px-5 md:px-8">
       <div className="max-w-5xl mx-auto">
 
