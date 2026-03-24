@@ -49,6 +49,18 @@
     "para3bold": "sencillez, autenticidad y el corazón",
     "para3b": "que solo una aventura familiar puede ofrecer de verdad."
   },
+  "location": {
+    "title": "Cómo Llegar",
+    "subtitle": "La Finca El Abanico se encuentra a pocos minutos del centro de La Fortuna, cerca del Volcán Arenal. Desde el parque central, tome la Ruta 702 hacia el sur en dirección a Chachagua — nos encontrará en el camino.",
+    "distance": "Distancia",
+    "km": "km",
+    "miles": "millas",
+    "getDirections": "Cómo llegar",
+    "fromCenter": "Desde el centro de La Fortuna",
+    "altSearch": "También puede buscar",
+    "altSearchName": "Tour de Caballos El Abanico",
+    "altSearchEnd": "directamente en Google Maps."
+  },
   "gallery": {
     "title": "Descubre el Paisaje",
     "subtitle": "Cada cabalgata por El Abanico es un encuentro único con la naturaleza de La Fortuna — ríos, senderos en el bosque, campos abiertos y vistas impresionantes te esperan.",

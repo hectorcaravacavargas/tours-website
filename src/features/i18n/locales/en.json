@@ -49,6 +49,18 @@
     "para3bold": "simplicity, authenticity, and heart",
     "para3b": "that only a family-run adventure can truly offer."
   },
+  "location": {
+    "title": "How to Find Us",
+    "subtitle": "Finca El Abanico is located just a few minutes from downtown La Fortuna, near the Arenal Volcano. From the central park, take Route 702 south toward Chachagua — you will find us along the way.",
+    "distance": "Distance",
+    "km": "km",
+    "miles": "miles",
+    "getDirections": "Get Directions",
+    "fromCenter": "From La Fortuna town center",
+    "altSearch": "You can also search for",
+    "altSearchName": "Tour de Caballos El Abanico",
+    "altSearchEnd": "directly in Google Maps."
+  },
   "gallery": {
     "title": "Discover the Landscape",
     "subtitle": "Every ride through El Abanico is a unique encounter with the nature of La Fortuna — rivers, forest trails, open fields and breathtaking views await you.",
