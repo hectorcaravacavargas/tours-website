@@ -6,6 +6,7 @@ import { Gallery } from './components/Gallery'
 import { About } from './components/About'
 import { Location } from './components/Location'
 import { FAQ } from './components/FAQ'
+import { Footer } from './components/Footer'
 
 function AppContent() {
   return (
@@ -17,6 +18,7 @@ function AppContent() {
       <About />
       <Location />
       <FAQ />
+      <Footer />
     </div>
   )
 }

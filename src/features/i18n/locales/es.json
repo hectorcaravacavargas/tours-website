@@ -1,9 +1,15 @@
 {
+  "footer": {
+    "tagline": "Tours a Caballo • Naturaleza • Aventura",
+    "designedBy": "Diseñado y desarrollado por"
+  },
   "nav": {
     "home": "Inicio",
     "tours": "Tours",
     "about": "Nosotros",
     "contact": "Contacto",
+    "location": "Ubicación",
+    "faq": "FAQ",
     "reserve": "Hacer Reserva"
   },
   "hero": {

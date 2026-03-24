@@ -50,6 +50,12 @@ body {
   to   { opacity: 0; transform: translateY(-10px); }
 }
 
+@keyframes blurFade {
+  0%   { opacity: 0;   backdrop-filter: blur(0px); }
+  25%  { opacity: 1;   backdrop-filter: blur(6px); }
+  100% { opacity: 0;   backdrop-filter: blur(0px); }
+}
+
 /* ── Barra de progreso del carrusel ──────────────────────────── */
 @keyframes progress {
   from { width: 0%; }

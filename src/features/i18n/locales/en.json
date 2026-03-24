@@ -1,9 +1,15 @@
 {
+  "footer": {
+    "tagline": "Horse Tours • Nature • Adventure",
+    "designedBy": "Designed & developed by"
+  },
   "nav": {
     "home": "Home",
     "tours": "Tours",
     "about": "About Us",
     "contact": "Contact",
+    "location": "Location",
+    "faq": "FAQ",
     "reserve": "Make a Reservation"
   },
   "hero": {
