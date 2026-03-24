@@ -4,7 +4,7 @@ import { LanguageToggle } from '../../features/i18n/components/LanguageToggle'
 
 const NAV_LINKS = [
   { key: 'nav.home',    href: '#home' },
-  { key: 'nav.tours',   href: '#tours' },
+  { key: 'nav.tours',   href: '/tours' },
   { key: 'nav.about',   href: '#about' },
   { key: 'nav.contact', href: '#contact' },
 ]
