@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import tourImage from '../../assets/hero.png'
 
@@ -191,7 +192,7 @@ export function Tours() {
 
                 <div className="flex gap-3 sm:ml-auto">
                   {/* Botón "Más Información" — min-w fijo + relleno al hover */}
-                  <button className="group min-w-[158px] flex items-center justify-center gap-1.5 border-2 border-forest-600 text-forest-600 hover:bg-forest-600 hover:text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:shadow-md hover:shadow-forest-900/20 active:translate-y-0 whitespace-nowrap">
+                  <Link to="/tours" className="group min-w-[158px] flex items-center justify-center gap-1.5 border-2 border-forest-600 text-forest-600 hover:bg-forest-600 hover:text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:shadow-md hover:shadow-forest-900/20 active:translate-y-0 whitespace-nowrap">
                     <svg
                       width="15" height="15" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" strokeWidth="2" strokeLinecap="round"
@@ -200,9 +201,10 @@ export function Tours() {
                       <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
                     </svg>
                     {t('tours.card.moreInfo')}
-                  </button>
+                  </Link>
                   {/* Botón "Reservar Ahora" — min-w fijo + flecha desliza al hover */}
-                  <button
+                  <Link
+                    to="/contacto"
                     className="group min-w-[148px] flex items-center justify-center gap-2 bg-forest-600 hover:bg-forest-500 text-white font-semibold px-6 py-2.5 rounded-full text-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:shadow-forest-900/30 active:translate-y-0 whitespace-nowrap"
                   >
                     {t('tours.card.bookNow')}
@@ -213,7 +215,7 @@ export function Tours() {
                     >
                       <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
