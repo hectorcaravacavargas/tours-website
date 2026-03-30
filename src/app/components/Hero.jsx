@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import image1 from '../../assets/hero.png'
@@ -62,12 +63,12 @@ export function Hero() {
 
           {/* Botones — min-w fijo para evitar layout shift al cambiar idioma */}
           <div className="flex items-center gap-3 mt-1">
-            <a
-              href="#contact"
+            <Link
+              to="/contacto"
               className="min-w-[158px] flex items-center justify-center bg-forest-500 hover:bg-forest-400 text-white font-semibold px-6 md:px-7 py-3 rounded-full transition-colors duration-200 shadow-lg shadow-forest-900/50 text-sm md:text-base whitespace-nowrap"
             >
               {t('hero.bookNow')}
-            </a>
+            </Link>
             <a
               href="#tours"
               className="min-w-[120px] flex items-center justify-center bg-white/15 backdrop-blur-sm hover:bg-white/25 text-white font-semibold px-6 md:px-7 py-3 rounded-full border border-white/25 transition-colors duration-200 text-sm md:text-base whitespace-nowrap"
