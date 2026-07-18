@@ -21,10 +21,10 @@
   },
   "tours": {
     "title": "Horseback Riding Tours",
-    "subtitle": "Discover the natural beauty of La Fortuna on horseback, guided through forest trails and river crossings by our experienced local team.",
+    "subtitle": "Discover La Fortuna the way it was meant to be seen: on horseback, along forest trails and river crossings, with local guides who know every corner.",
     "card": {
       "title": "Nature Trail Horseback Tour",
-      "description": "Live an authentic horseback adventure through tropical forest trails, crossing streams and discovering the breathtaking landscapes of La Fortuna alongside our skilled local guides.",
+      "description": "An authentic adventure through tropical forest: you'll cross clear streams, reach viewpoints facing the volcano, and explore the farm with guides who grew up on this land.",
       "duration": "Duration",
       "group": "Group",
       "people": "people",
@@ -48,7 +48,7 @@
     "imgAlt3": "River crossing on horseback",
     "para1a": "It all started with a",
     "para1bold": "life-changing decision.",
-    "para1b": "After years of working the land and raising horses in El Abanico, two partners chose to share the beauty surrounding us with the world — and to let nature be the guide.",
+    "para1b": "After years of working the land and raising horses at El Abanico, two partners decided to share the beauty around them with the world, and to let nature be the guide.",
     "para2": "That decision became this project: a place where our horses, our trails, and the untouched nature of Costa Rica come together to create memories that visitors carry home forever. We are not a company. We are two partners who open the gates of their home.",
     "quote": "You won't find the luxury of a hotel here. But you will find something far more powerful: the warmth of those who ride beside you, the silence of the forest, and the feeling that, for a moment, the world slowed down just for you.",
     "para3a": "In 2026, we took our first steps into the digital world. Come and be part of our story, and discover the",
@@ -68,7 +68,7 @@
     },
     "q3": {
       "q": "Do children pay a different price?",
-      "a": "Yes, we offer a reduced rate for children under 12. Contact us for exact pricing — we love welcoming families."
+      "a": "Yes, we offer a reduced rate for children under 12. Write to us and we'll share the exact prices. We love welcoming families."
     },
     "q4": {
       "q": "Is the horseback riding tour safe?",
@@ -80,7 +80,7 @@
     },
     "q6": {
       "q": "How long does the tour last?",
-      "a": "The standard tour lasts approximately 2.5 to 3 hours. We also offer extended options — ask us about custom experiences."
+      "a": "The standard tour lasts about 2.5 to 3 hours. We also offer longer rides. Ask us and we'll put together an experience that fits you."
     },
     "q7": {
       "q": "What should I wear for the tour?",
@@ -88,12 +88,12 @@
     },
     "q8": {
       "q": "What happens if it rains?",
-      "a": "Costa Rica is tropical — light rain is part of the magic! For heavy rain or storms, we will work with you to reschedule at no extra cost."
+      "a": "Costa Rica is tropical, and light rain is part of the magic. If there's heavy rain or a storm, we'll reschedule your tour at no extra cost."
     }
   },
   "location": {
     "title": "How to Find Us",
-    "subtitle": "Finca El Abanico is located just a few minutes from downtown La Fortuna, near the Arenal Volcano. From the central park, take Route 702 south toward Chachagua — you will find us along the way.",
+    "subtitle": "Finca El Abanico is just a few minutes from downtown La Fortuna, near the Arenal Volcano. From the central park, take Route 702 south toward Chachagua. The farm is right along the road.",
     "distance": "Distance",
     "km": "km",
     "miles": "miles",
@@ -153,40 +153,40 @@
   "horses": {
     "badge": "The Team",
     "title": "Meet Our Horses",
-    "subtitle": "Each one with their own personality — calm, trained, and ready to take you on a one-of-a-kind adventure."
+    "subtitle": "Each one has a personality of its own. All of them are gentle, well trained, and know these trails better than anyone."
   },
   "toursPage": {
     "badge": "Horseback Riding Experience",
     "videoTitle": "See the Tour in Action",
-    "videoSubtitle": "Watch the breathtaking landscapes, river crossings, and unforgettable moments waiting for you at El Abanico.",
+    "videoSubtitle": "This is what a day with us looks like: gentle horses, clear rivers, and the endless green of La Fortuna.",
     "timelineTitle": "Your Journey, Stop by Stop",
-    "timelineSubtitle": "Follow the trail through the heart of La Fortuna's nature — each stop a new discovery.",
+    "timelineSubtitle": "Follow the trail stop by stop and see what's waiting for you along the ride.",
     "stop1Title": "Welcome to El Abanico",
-    "stop1Desc": "Your adventure begins at Finca El Abanico, where you'll meet your guide and your horse. Breathe in the farm air, surrounded by lush tropical forest.",
+    "stop1Desc": "Your adventure starts at Finca El Abanico. You'll meet your guide and your horse here, and the forest takes care of the rest.",
     "stop2Title": "Into the Forest",
-    "stop2Desc": "Ride into the heart of the jungle on ancient trails. Listen to the birds, breathe in the cool forest air, and let the towering canopy shelter you above.",
+    "stop2Desc": "Ride beneath century-old trees as sunlight filters through the canopy. Listen to the birds and breathe some of the freshest air you'll ever find.",
     "stop3Title": "River Crossing",
-    "stop3Desc": "Feel the rush as your horse wades through crystal-clear streams. One of the most magical and memorable moments of the entire tour.",
+    "stop3Desc": "Feel the cool water splash as your horse wades across the stream. For many riders, the favorite moment of the whole tour.",
     "stop4Title": "Open Fields & Viewpoints",
-    "stop4Desc": "Emerge from the forest into open fields with sweeping panoramic views of the Arenal Volcano and the mountains surrounding La Fortuna.",
+    "stop4Desc": "The forest suddenly opens and the Arenal Volcano appears right in front of you, with the mountains of La Fortuna behind it.",
     "stop5Title": "The Return Trail",
-    "stop5Desc": "Head back under golden light as the day winds down — carrying memories that will last a lifetime, and hooves that have earned their rest.",
+    "stop5Desc": "Ride back to the farm in the golden afternoon light, with that special quiet a great adventure leaves behind and the feeling that you'll want to come back.",
     "bookTour": "Book This Tour",
     "backHome": "Back to Home"
   },
   "gallery": {
     "title": "Discover the Landscape",
-    "subtitle": "Every ride through El Abanico is a unique encounter with the nature of La Fortuna — rivers, forest trails, open fields and breathtaking views await you.",
+    "subtitle": "Clear rivers, forest trails, and open fields facing the volcano. This is what every ride through El Abanico looks like.",
     "cta": "Know more about the tour",
     "slide1Title": "River Crossings",
-    "slide1Desc": "Wade through crystal-clear streams surrounded by lush tropical forest.",
+    "slide1Desc": "Feel the cool water splash as your horse crosses the stream.",
     "slide2Title": "Forest Trails",
-    "slide2Desc": "Discover ancient paths winding through the heart of the jungle canopy.",
+    "slide2Desc": "Dirt paths winding under the forest shade, with birdsong all around.",
     "slide3Title": "The Farm & Stables",
-    "slide3Desc": "Meet our horses at Finca El Abanico, a working natural farm in La Fortuna.",
+    "slide3Desc": "Meet our horses at home, at Finca El Abanico in La Fortuna.",
     "slide4Title": "Family Adventure",
-    "slide4Desc": "Perfect for all ages — our calm horses and experienced guides ensure a safe and fun ride.",
+    "slide4Desc": "Great for all ages. With gentle horses and attentive guides, even the youngest riders enjoy the trip safely.",
     "slide5Title": "Unforgettable Moments",
-    "slide5Desc": "Share a one-of-a-kind riverside experience with friends and family, surrounded by pure nature."
+    "slide5Desc": "Afternoons by the river that stay with you long after you've gone home."
   }
 }

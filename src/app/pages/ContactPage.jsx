@@ -35,8 +35,8 @@ function ContactForm() {
     const lang = i18n.language
     const subject = encodeURIComponent(
       lang === 'es'
-        ? `Solicitud de Tour — ${form.name}`
-        : `Tour Request — ${form.name}`
+        ? `Solicitud de Tour de ${form.name}`
+        : `Tour Request from ${form.name}`
     )
     const body = encodeURIComponent(
       lang === 'es'

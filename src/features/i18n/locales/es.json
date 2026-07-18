@@ -21,10 +21,10 @@
   },
   "tours": {
     "title": "Tours a Caballo",
-    "subtitle": "Descubre la belleza natural de La Fortuna a caballo, guiado por senderos en el bosque y cruces de ríos de la mano de nuestro experimentado equipo local.",
+    "subtitle": "Descubre La Fortuna como se descubría antes: a caballo, entre senderos de bosque y cruces de río, junto a guías locales que conocen cada rincón.",
     "card": {
       "title": "Tour por Senderos Naturales a Caballo",
-      "description": "Vive una auténtica aventura ecuestre por senderos de bosque tropical, cruzando quebradas y descubriendo los impresionantes paisajes de La Fortuna junto a nuestros expertos guías locales.",
+      "description": "Una aventura auténtica por el bosque tropical: cruzarás quebradas de agua clara, subirás a miradores con vista al volcán y recorrerás la finca junto a guías que crecieron en estas tierras.",
       "duration": "Duración",
       "group": "Grupo",
       "people": "personas",
@@ -48,7 +48,7 @@
     "imgAlt3": "Cruzando el río a caballo",
     "para1a": "Todo comenzó con una",
     "para1bold": "decisión que cambió nuestra vida.",
-    "para1b": "Después de años trabajando la tierra y criando caballos en El Abanico, dos socios eligieron compartir la belleza que los rodea con el mundo — y dejar que la naturaleza fuera la guía.",
+    "para1b": "Después de años trabajando la tierra y criando caballos en El Abanico, dos socios decidieron compartir con el mundo la belleza que los rodea, y dejar que la naturaleza fuera la guía.",
     "para2": "Esa decisión se convirtió en este proyecto: un lugar donde nuestros caballos, nuestros senderos y la naturaleza intacta de Costa Rica se unen para crear recuerdos que los visitantes llevan consigo para siempre. No somos una empresa. Somos dos socios que abren las puertas de su hogar.",
     "quote": "Aquí no encontrarás el lujo de un hotel. Pero encontrarás algo mucho más poderoso: el calor de quienes cabalgan a tu lado, el silencio del bosque y la sensación de que, por un momento, el mundo se detuvo solo para ti.",
     "para3a": "En 2026, dimos nuestros primeros pasos en el mundo digital. Ven a ser parte de nuestra historia, y descubre la",
@@ -68,7 +68,7 @@
     },
     "q3": {
       "q": "¿Los niños pagan un precio diferente?",
-      "a": "Sí, ofrecemos tarifa reducida para niños menores de 12 años. Contáctenos para conocer los precios exactos — nos encanta recibir familias."
+      "a": "Sí, ofrecemos tarifa reducida para niños menores de 12 años. Escríbenos y te contamos los precios exactos. Nos encanta recibir familias."
     },
     "q4": {
       "q": "¿Es seguro el tour?",
@@ -80,7 +80,7 @@
     },
     "q6": {
       "q": "¿Cuánto dura el tour?",
-      "a": "El tour estándar dura aproximadamente 2.5 a 3 horas. También ofrecemos opciones extendidas — consulta sobre experiencias personalizadas."
+      "a": "El tour estándar dura entre 2.5 y 3 horas. También ofrecemos recorridos más largos. Pregúntanos y armamos una experiencia a tu medida."
     },
     "q7": {
       "q": "¿Qué ropa debo usar?",
@@ -88,12 +88,12 @@
     },
     "q8": {
       "q": "¿Qué pasa si llueve?",
-      "a": "Costa Rica es tropical — ¡la lluvia suave es parte de la magia! En caso de lluvia fuerte o tormenta, trabajaremos contigo para reprogramar sin costo adicional."
+      "a": "Costa Rica es tropical, y la lluvia suave es parte de la magia. Si llueve fuerte o hay tormenta, reprogramamos tu tour sin costo adicional."
     }
   },
   "location": {
     "title": "Cómo Llegar",
-    "subtitle": "La Finca El Abanico se encuentra a pocos minutos del centro de La Fortuna, cerca del Volcán Arenal. Desde el parque central, tome la Ruta 702 hacia el sur en dirección a Chachagua — nos encontrará en el camino.",
+    "subtitle": "La Finca El Abanico está a pocos minutos del centro de La Fortuna, cerca del Volcán Arenal. Desde el parque central, toma la Ruta 702 hacia el sur en dirección a Chachagua. La finca te queda sobre el camino.",
     "distance": "Distancia",
     "km": "km",
     "miles": "millas",
@@ -153,40 +153,40 @@
   "horses": {
     "badge": "El Equipo",
     "title": "Conoce Nuestros Caballos",
-    "subtitle": "Cada uno con su propia personalidad — tranquilos, entrenados y listos para llevarte a vivir una aventura única."
+    "subtitle": "Cada uno tiene su propia personalidad. Todos son mansos, están bien entrenados y conocen estos senderos mejor que nadie."
   },
   "toursPage": {
     "badge": "Experiencia Ecuestre",
     "videoTitle": "Ve el Tour en Acción",
-    "videoSubtitle": "Mira los impresionantes paisajes, cruces de ríos y momentos inolvidables que te esperan en El Abanico.",
+    "videoSubtitle": "Así es un día con nosotros: caballos mansos, ríos de agua clara y el verde infinito de La Fortuna.",
     "timelineTitle": "Tu Recorrido, Parada a Parada",
-    "timelineSubtitle": "Sigue el sendero por el corazón de la naturaleza de La Fortuna — cada parada, un nuevo descubrimiento.",
+    "timelineSubtitle": "Sigue el sendero paso a paso y descubre lo que te espera en cada parada del recorrido.",
     "stop1Title": "Bienvenido a El Abanico",
-    "stop1Desc": "Tu aventura comienza en la Finca El Abanico, donde conocerás a tu guía y a tu caballo. Respira el aire de la finca, rodeada de exuberante bosque tropical.",
-    "stop2Title": "Adentro en el Bosque",
-    "stop2Desc": "Cabalga por el corazón de la selva en senderos milenarios. Escucha los pájaros, respira el aire fresco del bosque y déjate proteger por el imponente dosel.",
+    "stop1Desc": "Tu aventura comienza en la Finca El Abanico. Aquí conoces a tu guía y a tu caballo, y el bosque se encarga del resto.",
+    "stop2Title": "Dentro del Bosque",
+    "stop2Desc": "Cabalga entre árboles centenarios mientras la luz se filtra entre las copas. Escucha los pájaros y respira el aire más puro que vas a encontrar.",
     "stop3Title": "Cruce del Río",
-    "stop3Desc": "Siente la emoción mientras tu caballo cruza quebradas de agua cristalina. Uno de los momentos más mágicos e inolvidables de todo el recorrido.",
+    "stop3Desc": "Siente el agua fresca salpicar mientras tu caballo cruza la quebrada. Para muchos, el momento favorito de todo el recorrido.",
     "stop4Title": "Campos Abiertos y Miradores",
-    "stop4Desc": "Sal del bosque a campos abiertos con vistas panorámicas del Volcán Arenal y las montañas que rodean La Fortuna.",
+    "stop4Desc": "El bosque se abre de repente y el Volcán Arenal aparece frente a ti, con las montañas de La Fortuna de fondo.",
     "stop5Title": "El Sendero de Regreso",
-    "stop5Desc": "Regresa bajo la luz dorada mientras el día se despide — llevando contigo recuerdos que durarán toda la vida, y cascos que bien se los ganaron.",
+    "stop5Desc": "Vuelve a la finca con la luz dorada de la tarde, ese silencio especial que deja una gran aventura y la certeza de que vas a querer volver.",
     "bookTour": "Reservar Este Tour",
     "backHome": "Volver al Inicio"
   },
   "gallery": {
     "title": "Descubre el Paisaje",
-    "subtitle": "Cada cabalgata por El Abanico es un encuentro único con la naturaleza de La Fortuna — ríos, senderos en el bosque, campos abiertos y vistas impresionantes te esperan.",
+    "subtitle": "Ríos de agua clara, senderos de bosque y campos abiertos frente al volcán. Esto es lo que te espera en cada cabalgata por El Abanico.",
     "cta": "Conocer más del tour",
     "slide1Title": "Cruces de Río",
-    "slide1Desc": "Cruza quebradas cristalinas rodeadas de exuberante bosque tropical.",
+    "slide1Desc": "Siente el agua fresca salpicar mientras tu caballo cruza la quebrada.",
     "slide2Title": "Senderos en el Bosque",
-    "slide2Desc": "Descubre antiguos caminos que serpentean por el corazón de la selva.",
+    "slide2Desc": "Caminos de tierra que serpentean bajo la sombra del bosque, con el canto de los pájaros de fondo.",
     "slide3Title": "La Finca y los Establos",
-    "slide3Desc": "Conoce nuestros caballos en la Finca El Abanico, una finca natural en La Fortuna.",
+    "slide3Desc": "Conoce a nuestros caballos en su casa: la Finca El Abanico, en La Fortuna.",
     "slide4Title": "Aventura en Familia",
-    "slide4Desc": "Apta para todas las edades — nuestros caballos tranquilos y guías experimentados garantizan un paseo seguro y divertido.",
+    "slide4Desc": "Apta para todas las edades. Con caballos mansos y guías atentos, hasta los más pequeños disfrutan el paseo con total seguridad.",
     "slide5Title": "Momentos Inolvidables",
-    "slide5Desc": "Comparte junto al río una experiencia única con amigos y familia, rodeado de naturaleza pura."
+    "slide5Desc": "Tardes junto al río que se quedan en la memoria mucho después de volver a casa."
   }
 }
