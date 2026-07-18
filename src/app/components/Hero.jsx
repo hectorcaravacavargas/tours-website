@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import image1 from '../../assets/hero.png'
+import { ranaOjosRojos, perezosoTresDedos, tucanPicoIris } from '../../assets'
+
+const imgLeft = ranaOjosRojos
+const imgCenter = perezosoTresDedos
+const imgRight = tucanPicoIris
 
 
 export function Hero() {
@@ -17,8 +21,8 @@ export function Hero() {
       {/* ── Columna izquierda — solo desktop ───── */}
       <div className="hidden md:block md:w-[28%] relative rounded-2xl overflow-hidden flex-shrink-0">
         <img
-          src={image1}
-          alt="Tour a caballo"
+          src={imgLeft}
+          alt="Rana de ojos rojos de Costa Rica"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-forest-950/30 to-transparent" />
@@ -27,8 +31,8 @@ export function Hero() {
       {/* ── Columna central — visible siempre ──── */}
       <div className="flex-1 relative md:rounded-2xl overflow-hidden">
         <img
-          src={image1}
-          alt="Tour de Caballos El Abanico"
+          src={imgCenter}
+          alt="Perezoso de tres dedos en el bosque de Costa Rica"
           className="w-full h-full object-cover"
         />
 
@@ -117,8 +121,8 @@ export function Hero() {
       {/* ── Columna derecha — solo desktop ──────── */}
       <div className="hidden md:block md:w-[28%] relative rounded-2xl overflow-hidden flex-shrink-0">
         <img
-          src={image1}
-          alt="Tour a caballo"
+          src={imgRight}
+          alt="Tucán pico iris de Costa Rica"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-l from-forest-950/30 to-transparent" />

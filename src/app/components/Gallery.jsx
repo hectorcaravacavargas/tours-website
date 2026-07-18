@@ -1,14 +1,19 @@
 import { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import img from '../../assets/hero.png'
+import {
+  caballoCruzandoRio,
+  jineteCaballoBosque,
+  jineteSaludoBosque,
+  grupoJinetesRio,
+  tresJinetesOrillaRio,
+} from '../../assets'
 
-/* ── Slides — reemplazar src con las fotos reales ────────────── */
 const SLIDES = [
-  { src: img, titleKey: 'gallery.slide1Title', descKey: 'gallery.slide1Desc' },
-  { src: img, titleKey: 'gallery.slide2Title', descKey: 'gallery.slide2Desc' },
-  { src: img, titleKey: 'gallery.slide3Title', descKey: 'gallery.slide3Desc' },
-  { src: img, titleKey: 'gallery.slide4Title', descKey: 'gallery.slide4Desc' },
-  { src: img, titleKey: 'gallery.slide5Title', descKey: 'gallery.slide5Desc' },
+  { src: caballoCruzandoRio, titleKey: 'gallery.slide1Title', descKey: 'gallery.slide1Desc' },
+  { src: jineteCaballoBosque, titleKey: 'gallery.slide2Title', descKey: 'gallery.slide2Desc' },
+  { src: jineteSaludoBosque, titleKey: 'gallery.slide3Title', descKey: 'gallery.slide3Desc' },
+  { src: grupoJinetesRio, titleKey: 'gallery.slide4Title', descKey: 'gallery.slide4Desc' },
+  { src: tresJinetesOrillaRio, titleKey: 'gallery.slide5Title', descKey: 'gallery.slide5Desc' },
 ]
 
 const SLIDE_DURATION = 5500

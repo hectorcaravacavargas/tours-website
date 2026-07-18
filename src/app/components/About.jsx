@@ -1,10 +1,14 @@
 import { useTranslation } from 'react-i18next'
-import img from '../../assets/hero.png'
+import {
+  cabalgataBosqueDosJinetes,
+  jineteSaludoBosque,
+  cruceRioCaballo,
+  heroPlaceholder as img,
+} from '../../assets'
 
-/* ── Imágenes — reemplazar src con las fotos reales ─────────── */
-const IMG_LEFT   = img   // foto tall — ej: socios a caballo
-const IMG_MID_1  = img   // foto horizontal — ej: en la finca
-const IMG_MID_2  = img   // foto horizontal — ej: cruzando el río
+const IMG_LEFT   = cabalgataBosqueDosJinetes  // foto tall — socios a caballo
+const IMG_MID_1  = jineteSaludoBosque         // foto horizontal — en la finca
+const IMG_MID_2  = cruceRioCaballo            // foto horizontal — cruzando el río
 
 /* ── Caballos — reemplazar src con las fotos reales ────────── */
 const HORSES = [

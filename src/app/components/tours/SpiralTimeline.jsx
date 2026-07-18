@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import img from '../../../assets/hero.png'
+import { heroPlaceholder as img } from '../../../assets'
 
 /* ── Tour stops — replace src with real photos when available ──── */
 const STOPS = [

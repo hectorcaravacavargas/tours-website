@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import tourImage from '../../assets/hero.png'
+import { heroPlaceholder as tourImage } from '../../assets'
 
 /* ── Íconos SVG ─────────────────────────────────────────────── */
 

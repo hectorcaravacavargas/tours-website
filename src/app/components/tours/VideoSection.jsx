@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-/* Replace with the real YouTube video ID when available */
-const YT_VIDEO_ID = 'dQw4w9WgXcQ'
+import { videoCabalgata as tourVideo, videoCabalgataPoster as tourVideoPoster } from '../../../assets'
 
 export function VideoSection() {
   const { t } = useTranslation()
@@ -39,13 +38,14 @@ export function VideoSection() {
                      ring-1 ring-black/6"
           style={{ paddingBottom: '56.25%' }}
         >
-          <iframe
-            src={`https://www.youtube.com/embed/${YT_VIDEO_ID}?rel=0&modestbranding=1`}
+          <video
+            src={tourVideo}
+            poster={tourVideoPoster}
             title={t('toursPage.videoTitle')}
-            className="absolute inset-0 w-full h-full border-0"
-            allowFullScreen
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            className="absolute inset-0 w-full h-full object-cover"
+            controls
+            playsInline
+            preload="metadata"
           />
         </div>
 
