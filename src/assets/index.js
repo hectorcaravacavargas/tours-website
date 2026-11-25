@@ -3,7 +3,8 @@
 
    Estructura:
      images/cabalgatas/   → fotos de los tours a caballo
-     images/fauna/        → fauna de Costa Rica (portada)
+     images/paisajes/     → paisajes de la finca (portada, galería)
+     images/fauna/        → fauna de Costa Rica (sin uso actual)
      images/placeholders/ → imágenes temporales
      videos/              → videos y sus pósters
 

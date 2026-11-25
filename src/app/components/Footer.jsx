@@ -1,27 +1,23 @@
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { waUrl } from '../../config/business'
 
-const WA_NUMBER = import.meta.env.VITE_WA_NUMBER
-const WA_MSG = {
-  es: 'Hola, estoy interesado en el tour a caballo. ¿Me pueden dar más información?',
-  en: "Hello! I'm interested in the horseback riding tour. Can you give me more information?",
-}
-
+/* Desktop only: on phones MobileBookingBar carries WhatsApp. Hidden on /contacto, where it covered the Pay button. */
 export function WhatsAppButton() {
-  const { i18n } = useTranslation()
-  const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
-    WA_MSG[i18n.language] ?? WA_MSG.en
-  )}`
+  const { t, i18n } = useTranslation()
+  const { pathname } = useLocation()
+  if ((pathname.replace(/\/+$/, '') || '/') === '/contacto') return null
 
   return (
     <a
-      href={waUrl}
+      href={waUrl(i18n.language)}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Contactar por WhatsApp"
+      aria-label={t('nav.whatsapp')}
       className="fixed bottom-6 right-6 z-50
                  w-14 h-14 rounded-full
-                 flex items-center justify-center
+                 hidden md:flex items-center justify-center
                  shadow-lg shadow-green-900/30
                  hover:scale-110 hover:shadow-xl hover:shadow-green-900/40
                  transition-all duration-200"
@@ -40,10 +36,35 @@ export function WhatsAppButton() {
 const NAV_LINKS = [
   { key: 'nav.home',     href: '#home',      page: false },
   { key: 'nav.tours',    href: '/tours',     page: true  },
-  { key: 'nav.about',    href: '/nosotros',  page: true  },
+  { key: 'nav.gallery',  href: '/galeria',   page: true  },
   { key: 'nav.contact',  href: '/contacto',  page: true  },
   { key: 'nav.location', href: '#location',  page: false },
   { key: 'nav.faq',      href: '#faq',       page: false },
+]
+
+function FacebookIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  )
+}
+
+function InstagramIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  )
+}
+
+const SOCIAL_LINKS = [
+  { label: 'Facebook',  href: 'https://www.facebook.com/profile.php?id=61594633156749', icon: <FacebookIcon /> },
+  { label: 'Instagram', href: 'https://www.instagram.com/toureltrapiche/',              icon: <InstagramIcon /> },
 ]
 
 export function Footer() {
@@ -73,24 +94,48 @@ export function Footer() {
       )}
 
       {/* ── Footer ───────────────────────────────────── */}
-      <footer className="bg-white border-t border-gray-100 px-5 md:px-8 pt-12 pb-8">
+      <footer className="bg-forest-950 px-5 md:px-8 pt-12 pb-28 md:pb-8">
         <div className="max-w-5xl mx-auto">
 
-          {/* Fila superior: logo + nav */}
+          {/* Fila superior: logo + redes + nav */}
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-10">
 
-            {/* Logo + tagline */}
+            {/* Logo + tagline + redes sociales */}
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full border border-forest-400/40 bg-forest-50
+                <div className="w-10 h-10 rounded-full border border-forest-400/50 bg-forest-800/60
                                 flex items-center justify-center">
                   <span className="text-xl leading-none select-none">🐴</span>
                 </div>
-                <span className="font-heading font-semibold text-gray-900 text-lg">
-                  El Abanico
+                <span className="font-heading font-semibold text-white text-lg">
+                  El Trapiche
                 </span>
               </div>
-              <p className="text-gray-400 text-sm">{t('footer.tagline')}</p>
+              <p className="text-white/50 text-sm">{t('footer.tagline')}</p>
+
+              <div className="mt-3">
+                <p className="text-white/60 text-xs tracking-[0.18em] uppercase font-medium mb-3">
+                  {t('footer.social')}
+                </p>
+                <ul className="flex gap-3">
+                  {SOCIAL_LINKS.map(({ label, href, icon }) => (
+                    <li key={label}>
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={label}
+                        className="w-10 h-10 rounded-full flex items-center justify-center
+                                   border border-white/15 bg-white/5 text-white/75
+                                   hover:bg-forest-500 hover:border-forest-500 hover:text-white
+                                   transition-colors duration-200"
+                      >
+                        {icon}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* Nav links */}
@@ -99,17 +144,17 @@ export function Footer() {
                 {NAV_LINKS.map(({ key, href, page }) => (
                   <li key={key}>
                     {page ? (
-                      <a
-                        href={href}
-                        className="text-gray-500 hover:text-forest-600 text-sm font-medium
+                      <Link
+                        to={href}
+                        className="text-white/60 hover:text-forest-300 text-sm font-medium
                                    transition-colors duration-200"
                       >
                         {t(key)}
-                      </a>
+                      </Link>
                     ) : (
                       <button
                         onClick={(e) => scrollTo(href.replace('#', ''), e)}
-                        className="text-gray-500 hover:text-forest-600 text-sm font-medium
+                        className="text-white/60 hover:text-forest-300 text-sm font-medium
                                    transition-colors duration-200 cursor-pointer"
                       >
                         {t(key)}
@@ -122,21 +167,21 @@ export function Footer() {
           </div>
 
           {/* Divisor */}
-          <div className="h-px bg-gray-100 mb-8" />
+          <div className="h-px bg-white/10 mb-8" />
 
           {/* Fila inferior: copyright + crédito */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p className="text-gray-400 text-sm">
-              © {year} Tour de Caballos El Abanico.
+            <p className="text-white/60 text-sm">
+              © {year} Tour de Caballos El Trapiche.
             </p>
             <div className="text-left md:text-right">
-              <p className="text-gray-400 text-sm">
+              <p className="text-white/60 text-sm">
                 {t('footer.designedBy')}{' '}
-                <strong className="text-gray-600 font-semibold">
+                <strong className="text-white/75 font-semibold">
                   Hector Alonso Caravaca Vargas
                 </strong>
               </p>
-              <p className="text-gray-400 text-xs mt-0.5">{import.meta.env.VITE_DEV_EMAIL}</p>
+              <p className="text-white/60 text-xs mt-0.5">{import.meta.env.VITE_DEV_EMAIL}</p>
             </div>
           </div>
 
