@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { heroPlaceholder as tourImage } from '../../assets'
+import { grupoSenderoBosque as tourImage } from '../../assets'
+import { PRICE_PER_PERSON, MIN_PEOPLE, MAX_PEOPLE } from '../../config/business'
 
 /* ── Íconos SVG ─────────────────────────────────────────────── */
 
@@ -41,6 +42,18 @@ function FarmIcon() {
   )
 }
 
+function CalendarIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="#2d7a4f" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  )
+}
+
 function ArrowIcon() {
   return (
     <span className="flex-shrink-0 inline-flex items-center justify-center w-5 h-5 rounded-full bg-forest-500/15 border border-forest-500/25">
@@ -61,7 +74,7 @@ const iconBoxStyle = {
 export function Tours() {
   const { t } = useTranslation()
 
-  const checks = ['check1', 'check2', 'check3', 'check4']
+  const checks = ['check1', 'check2', 'check3', 'check4', 'check5', 'check6']
 
   return (
     <>
@@ -117,7 +130,7 @@ export function Tours() {
         </div>
 
         {/* ── Tarjeta principal ───────────────────────── */}
-        <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl shadow-gray-200/70 overflow-hidden transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-300/60 cursor-pointer">
+        <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl shadow-gray-200/70 overflow-hidden">
           <div className="flex flex-col lg:flex-row">
 
             {/* Imagen — IZQUIERDA */}
@@ -125,7 +138,9 @@ export function Tours() {
               <img
                 src={tourImage}
                 alt={t('tours.card.title')}
-                className="w-full h-64 lg:h-full object-cover"
+                loading="lazy"
+                className="w-full h-64 lg:absolute lg:inset-0 lg:h-full object-cover"
+                style={{ objectPosition: 'center 62%' }}
               />
               {/* Gradiente suave sobre la imagen */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5" />
@@ -147,7 +162,7 @@ export function Tours() {
               </div>
 
               {/* Íconos de información con gradiente */}
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {/* Duración */}
                 <div className="rounded-2xl p-3.5 flex flex-col items-center gap-2 text-center min-h-[96px] justify-center" style={iconBoxStyle}>
                   <ClockIcon />
@@ -159,7 +174,7 @@ export function Tours() {
                   <GroupIcon />
                   <span className="text-xs text-gray-500 font-medium">{t('tours.card.group')}</span>
                   <strong className="text-sm text-gray-800 leading-tight text-center">
-                    2–20<br />{t('tours.card.people')}
+                    {MIN_PEOPLE}–{MAX_PEOPLE}<br />{t('tours.card.people')}
                   </strong>
                 </div>
                 {/* Finca Natural */}
@@ -167,6 +182,14 @@ export function Tours() {
                   <FarmIcon />
                   <span className="text-xs text-gray-500 font-medium">{t('tours.card.locLabel')}</span>
                   <strong className="text-sm text-gray-800">{t('tours.card.locValue')}</strong>
+                </div>
+                {/* Horario */}
+                <div className="rounded-2xl p-3.5 flex flex-col items-center gap-2 text-center min-h-[96px] justify-center" style={iconBoxStyle}>
+                  <CalendarIcon />
+                  <span className="text-xs text-gray-500 font-medium">{t('tours.card.schedule')}</span>
+                  <strong className="text-sm text-gray-800 leading-tight text-center whitespace-nowrap">
+                    8:00 am –<br />3:00 pm
+                  </strong>
                 </div>
               </div>
 
@@ -180,19 +203,31 @@ export function Tours() {
                 ))}
               </div>
 
+              {/* No incluido */}
+              <p className="flex items-start gap-2.5 rounded-xl bg-gray-50 border border-gray-100 px-4 py-3 text-xs text-gray-500 leading-relaxed">
+                <svg
+                  width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+                  className="flex-shrink-0 mt-px text-gray-400"
+                >
+                  <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                {t('tours.card.notIncluded')}
+              </p>
+
               {/* Precio + Botones */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-1 border-t border-gray-100">
                 <div className="min-w-[130px]">
                   <span className="text-xs text-gray-400 block whitespace-nowrap">{t('tours.card.from')}</span>
                   <div className="flex items-baseline gap-1">
-                    <span className="font-heading text-3xl font-bold text-forest-600">$50</span>
+                    <span className="font-heading text-3xl font-bold text-forest-600">${PRICE_PER_PERSON}</span>
                     <span className="text-sm text-gray-400 whitespace-nowrap">/ {t('tours.card.perPerson')}</span>
                   </div>
                 </div>
 
-                <div className="flex gap-3 sm:ml-auto">
+                <div className="flex flex-col-reverse sm:flex-row gap-3 sm:ml-auto">
                   {/* Botón "Más Información" — min-w fijo + relleno al hover */}
-                  <Link to="/tours" className="group min-w-[158px] flex items-center justify-center gap-1.5 border-2 border-forest-600 text-forest-600 hover:bg-forest-600 hover:text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:shadow-md hover:shadow-forest-900/20 active:translate-y-0 whitespace-nowrap">
+                  <Link to="/tours" className="group w-full sm:w-auto sm:min-w-[158px] flex items-center justify-center gap-1.5 border-2 border-forest-600 text-forest-600 hover:bg-forest-600 hover:text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:shadow-md hover:shadow-forest-900/20 active:translate-y-0 whitespace-nowrap">
                     <svg
                       width="15" height="15" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" strokeWidth="2" strokeLinecap="round"
@@ -205,7 +240,7 @@ export function Tours() {
                   {/* Botón "Reservar Ahora" — min-w fijo + flecha desliza al hover */}
                   <Link
                     to="/contacto"
-                    className="group min-w-[148px] flex items-center justify-center gap-2 bg-forest-600 hover:bg-forest-500 text-white font-semibold px-6 py-2.5 rounded-full text-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:shadow-forest-900/30 active:translate-y-0 whitespace-nowrap"
+                    className="group w-full sm:w-auto sm:min-w-[148px] flex items-center justify-center gap-2 bg-forest-600 hover:bg-forest-500 text-white font-semibold px-6 py-2.5 rounded-full text-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:shadow-forest-900/30 active:translate-y-0 whitespace-nowrap"
                   >
                     {t('tours.card.bookNow')}
                     <svg

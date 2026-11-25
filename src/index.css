@@ -39,15 +39,27 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── Mobile (guests arrive from a QR code and book on the phone) ── */
+html {
+  -webkit-text-size-adjust: 100%; /* no font inflation in landscape */
+}
+
+/* No 300ms double-tap-zoom wait on controls */
+a, button, label, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* iOS Safari zooms into any field under 16px and never zooms back out */
+@media (pointer: coarse) {
+  input, textarea, select {
+    font-size: 16px;
+  }
+}
+
 /* ── Animación dropdown mobile ───────────────────────────────── */
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-  from { opacity: 1; transform: translateY(0); }
-  to   { opacity: 0; transform: translateY(-10px); }
 }
 
 @keyframes blurFade {

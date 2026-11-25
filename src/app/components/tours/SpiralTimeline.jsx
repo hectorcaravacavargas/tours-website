@@ -1,13 +1,19 @@
 import { useTranslation } from 'react-i18next'
-import { heroPlaceholder as img } from '../../../assets'
+import {
+  jineteSaludoBosque,
+  grupoSenderoBosque,
+  caballoCruzandoRio,
+  volcanArenalVista,
+  grupoCabalgataColinas,
+} from '../../../assets'
 
-/* ── Tour stops — replace src with real photos when available ──── */
+/* ── Tour stops — swap in photos from the business as they arrive ──── */
 const STOPS = [
-  { src: img, titleKey: 'toursPage.stop1Title', descKey: 'toursPage.stop1Desc', num: '01' },
-  { src: img, titleKey: 'toursPage.stop2Title', descKey: 'toursPage.stop2Desc', num: '02' },
-  { src: img, titleKey: 'toursPage.stop3Title', descKey: 'toursPage.stop3Desc', num: '03' },
-  { src: img, titleKey: 'toursPage.stop4Title', descKey: 'toursPage.stop4Desc', num: '04' },
-  { src: img, titleKey: 'toursPage.stop5Title', descKey: 'toursPage.stop5Desc', num: '05' },
+  { src: jineteSaludoBosque,    titleKey: 'toursPage.stop1Title', descKey: 'toursPage.stop1Desc', num: '01' },
+  { src: grupoSenderoBosque,    titleKey: 'toursPage.stop2Title', descKey: 'toursPage.stop2Desc', num: '02' },
+  { src: caballoCruzandoRio,    titleKey: 'toursPage.stop3Title', descKey: 'toursPage.stop3Desc', num: '03' },
+  { src: volcanArenalVista,     titleKey: 'toursPage.stop4Title', descKey: 'toursPage.stop4Desc', num: '04' },
+  { src: grupoCabalgataColinas, titleKey: 'toursPage.stop5Title', descKey: 'toursPage.stop5Desc', num: '05' },
 ]
 
 /*
@@ -98,6 +104,7 @@ function Stop({ stop, idx }) {
       <img
         src={stop.src}
         alt={t(stop.titleKey)}
+        loading="lazy"
         className="w-full h-64 lg:h-[26rem] object-cover
                    transition-transform duration-300 ease-out hover:scale-[1.04]"
       />
@@ -121,7 +128,7 @@ function Stop({ stop, idx }) {
       <div className="flex items-center gap-2.5">
         <div className="w-7 h-px bg-forest-500/50 rounded-full" />
         <span className="text-forest-600/70 text-xs tracking-[0.18em] uppercase font-medium">
-          Stop {stop.num}
+          {t('toursPage.stopLabel')} {stop.num}
         </span>
       </div>
 

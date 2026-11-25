@@ -1,8 +1,8 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const FAQ_KEYS = ['q1','q2','q3','q4','q5','q6','q7','q8']
-const ANIM_MS  = 220
+/* q9 (horario) sits right after q6 (duración) */
+const FAQ_KEYS = ['q1','q2','q3','q4','q5','q6','q9','q7','q8']
 
 function ChevronDown({ open }) {
   return (
@@ -18,38 +18,23 @@ function ChevronDown({ open }) {
 
 export function FAQ() {
   const { t } = useTranslation()
-  const [openIdx,    setOpenIdx]    = useState(null)
-  const [closingIdx, setClosingIdx] = useState(null)
-  const timerRef = useRef(null)
-
-  const toggle = (i) => {
-    if (openIdx === i) {
-      // Cerrar: animar salida, luego quitar del DOM
-      setClosingIdx(i)
-      clearTimeout(timerRef.current)
-      timerRef.current = setTimeout(() => {
-        setOpenIdx(null)
-        setClosingIdx(null)
-      }, ANIM_MS)
-    } else {
-      // Abrir: cancelar cualquier cierre pendiente
-      clearTimeout(timerRef.current)
-      setClosingIdx(null)
-      setOpenIdx(i)
-    }
-  }
+  const [openIdx, setOpenIdx] = useState(null)
 
   // Split into two columns
-  const left  = FAQ_KEYS.slice(0, 4)
-  const right = FAQ_KEYS.slice(4, 8)
+  const half  = Math.ceil(FAQ_KEYS.length / 2)
+  const left  = FAQ_KEYS.slice(0, half)
+  const right = FAQ_KEYS.slice(half)
 
-  const Item = ({ faqKey, idx }) => {
-    const isOpen    = openIdx    === idx
-    const isClosing = closingIdx === idx
+  /* Render function, not a nested component: a nested component remounts every render and kills the transition */
+  const renderItem = (faqKey, idx) => {
+    const isOpen  = openIdx === idx
+    const panelId = `faq-${faqKey}`
     return (
-      <div className="border-b border-gray-100 py-4">
+      <div key={faqKey} className="border-b border-gray-100 py-4">
         <button
-          onClick={() => toggle(idx)}
+          onClick={() => setOpenIdx(isOpen ? null : idx)}
+          aria-expanded={isOpen}
+          aria-controls={panelId}
           className="group flex items-center justify-between w-full text-left gap-4 cursor-pointer"
         >
           <span className="text-gray-800 font-medium text-[0.97rem] leading-snug">
@@ -65,19 +50,20 @@ export function FAQ() {
           </div>
         </button>
 
-        {/* Respuesta — slideDown al abrir, slideUp al cerrar */}
-        {(isOpen || isClosing) && (
-          <p
-            className="pt-3 pb-1 text-gray-500 text-sm leading-relaxed"
-            style={{
-              animation: isClosing
-                ? `slideUp ${ANIM_MS}ms ease-in forwards`
-                : 'slideDown 0.25s ease-out forwards',
-            }}
-          >
-            {t(`faq.${faqKey}.a`)}
-          </p>
-        )}
+        {/* Respuesta — grid 0fr→1fr anima la altura real, así lo de abajo (footer) se desliza en vez de saltar */}
+        <div
+          id={panelId}
+          inert={!isOpen}
+          className={`grid transition-[grid-template-rows,opacity] duration-250
+                      ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none
+                      ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+        >
+          <div className="overflow-hidden">
+            <p className="pt-3 pb-1 text-gray-500 text-sm leading-relaxed">
+              {t(`faq.${faqKey}.a`)}
+            </p>
+          </div>
+        </div>
       </div>
     )
   }
@@ -106,14 +92,10 @@ export function FAQ() {
         {/* Grid 2 columnas */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16">
           <div>
-            {left.map((key, i) => (
-              <Item key={key} faqKey={key} idx={i} />
-            ))}
+            {left.map((key, i) => renderItem(key, i))}
           </div>
           <div>
-            {right.map((key, i) => (
-              <Item key={key} faqKey={key} idx={i + 4} />
-            ))}
+            {right.map((key, i) => renderItem(key, i + half))}
           </div>
         </div>
       </div>

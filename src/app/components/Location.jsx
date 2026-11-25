@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next'
+import { MAP_COORDS as DESTINATION } from '../../config/business'
 
-const DESTINATION = `${import.meta.env.VITE_MAP_LAT},${import.meta.env.VITE_MAP_LNG}`
-const MAPS_EMBED  = `https://maps.google.com/maps?q=${DESTINATION}&z=14&output=embed`
+/* z=12 frames the farm together with downtown La Fortuna */
+const MAPS_EMBED  = `https://maps.google.com/maps?q=${DESTINATION}&z=12&output=embed`
 
 function openDirections() {
   if (navigator.geolocation) {
@@ -60,18 +61,23 @@ export function Location() {
                 'radial-gradient(circle at 20% 20%, #3a7d58 0%, #1b4332 45%, #0d1f17 100%)',
             }}
           >
-            <p className="text-xs tracking-[0.18em] uppercase text-white/50 font-medium">
-              {t('location.distance')}
-            </p>
+            <div>
+              <p className="text-xs tracking-[0.18em] uppercase text-white/50 font-medium">
+                {t('location.distance')}
+              </p>
+              <p className="text-white/85 text-sm mt-1.5">
+                {t('location.fromCenter')}
+              </p>
+            </div>
 
             <div className="flex items-center gap-5">
               <div>
-                <span className="font-heading font-bold text-5xl leading-none">14.4</span>
+                <span className="font-heading font-bold text-5xl leading-none">12</span>
                 <span className="text-white/60 text-sm ml-2">{t('location.km')}</span>
               </div>
               <div className="w-px h-10 bg-white/20 flex-shrink-0" />
               <div>
-                <span className="font-heading font-bold text-5xl leading-none">9.0</span>
+                <span className="font-heading font-bold text-5xl leading-none">7.5</span>
                 <span className="text-white/60 text-sm ml-2">{t('location.miles')}</span>
               </div>
             </div>
@@ -96,9 +102,6 @@ export function Location() {
                   <polyline points="12 5 19 12 12 19"/>
                 </svg>
               </button>
-              <p className="text-white/40 text-xs text-center mt-2.5">
-                {t('location.fromCenter')}
-              </p>
             </div>
           </div>
 
@@ -112,7 +115,7 @@ export function Location() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Finca El Abanico location"
+              title={t('location.mapTitle')}
             />
           </div>
         </div>

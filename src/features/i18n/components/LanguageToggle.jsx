@@ -31,6 +31,28 @@ export function LanguageToggle({ variant = 'default' }) {
     )
   }
 
+  /* variant="compact" — mobile bar: two 40px segments, the current one highlighted */
+  if (variant === 'compact') {
+    const seg = (code, active) => (
+      <button
+        type="button"
+        onClick={active ? undefined : toggleLanguage}
+        aria-pressed={active}
+        aria-label={code === 'es' ? 'Español' : 'English'}
+        className={`w-10 h-10 rounded-lg text-xs font-bold tracking-widest uppercase transition-colors duration-200
+                    ${active ? 'bg-white/15 text-white' : 'text-white/50'}`}
+      >
+        {code}
+      </button>
+    )
+    return (
+      <div role="group" aria-label="Idioma / Language" className="flex items-center rounded-xl border border-forest-600/40 bg-forest-800/60 p-0.5">
+        {seg('es', isES)}
+        {seg('en', !isES)}
+      </div>
+    )
+  }
+
   if (variant === 'navbar') {
     return (
       /* Ancho fijo para que el cambio de idioma no mueva el layout */

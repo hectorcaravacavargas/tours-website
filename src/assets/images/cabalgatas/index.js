@@ -1,4 +1,4 @@
-/* ── Fotos de cabalgatas (galería, nosotros) ───────────────── */
+/* ── Fotos de cabalgatas (portada, galería) ──────────────── */
 export { default as cabalgataBosqueDosJinetes } from './cabalgata-bosque-dos-jinetes.webp'
 export { default as caballoCruzandoRio } from './caballo-cruzando-rio.webp'
 export { default as cruceRioCaballo } from './cruce-rio-caballo.webp'
@@ -8,3 +8,8 @@ export { default as jineteCaballoBosque } from './jinete-caballo-bosque.webp'
 export { default as jineteCruceRioPerfil } from './jinete-cruce-rio-perfil.webp'
 export { default as jineteSaludoBosque } from './jinete-saludo-bosque.webp'
 export { default as tresJinetesOrillaRio } from './tres-jinetes-orilla-rio.webp'
+export { default as grupoSenderoBosque } from './grupo-sendero-bosque.webp'
+export { default as grupoCruceRioPiedras } from './grupo-cruce-rio-piedras.webp'
+/* Versiones horizontales para la portada (costados extendidos con Adobe Firefly) */
+export { default as grupoSenderoBosquePanoramica } from './grupo-sendero-bosque-panoramica.webp'
+export { default as grupoCruceRioPiedrasPanoramica } from './grupo-cruce-rio-piedras-panoramica.webp'

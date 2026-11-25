@@ -1,16 +1,16 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AppProviders } from './providers/AppProviders'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { Tours } from './components/Tours'
 import { Gallery } from './components/Gallery'
-import { About } from './components/About'
 import { Location } from './components/Location'
 import { FAQ } from './components/FAQ'
 import { Footer, WhatsAppButton } from './components/Footer'
+import { MobileBookingBar } from './components/MobileBookingBar'
 import { ToursPage } from './pages/ToursPage'
-import { AboutPage } from './pages/AboutPage'
+import { GalleryPage } from './pages/GalleryPage'
 import { ContactPage } from './pages/ContactPage'
 
 function HomePage() {
@@ -28,7 +28,6 @@ function HomePage() {
       <Hero />
       <Tours />
       <Gallery />
-      <About />
       <Location />
       <FAQ />
       <Footer />
@@ -43,10 +42,13 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/tours" element={<ToursPage />} />
-          <Route path="/nosotros" element={<AboutPage />} />
+          <Route path="/galeria" element={<GalleryPage />} />
           <Route path="/contacto" element={<ContactPage />} />
+          {/* Old links (e.g. the removed /nosotros page) land on home instead of a blank page */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <WhatsAppButton />
+        <MobileBookingBar />
       </BrowserRouter>
     </AppProviders>
   )

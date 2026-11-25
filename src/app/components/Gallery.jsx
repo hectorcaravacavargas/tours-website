@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import {
   caballoCruzandoRio,
@@ -41,6 +42,7 @@ export function Gallery() {
   const [current, setCurrent] = useState(0)
   const [hovering, setHovering] = useState(false)
   const intervalRef = useRef(null)
+  const swipeX = useRef(null) // where the current touch started
 
   /* ── Auto-advance: se resetea al cambiar de slide o pausar ─── */
   useEffect(() => {
@@ -73,15 +75,28 @@ export function Gallery() {
       </div>
 
       {/* ── Carrusel ─────────────────────────────────── */}
+      {/* Only a real mouse pauses it: a tap fires an emulated mouseenter that used to freeze autoplay */}
       <div
         className="max-w-5xl mx-auto"
-        onMouseEnter={() => setHovering(true)}
-        onMouseLeave={() => setHovering(false)}
+        onPointerEnter={(e) => { if (e.pointerType === 'mouse') setHovering(true) }}
+        onPointerLeave={(e) => { if (e.pointerType === 'mouse') setHovering(false) }}
       >
         {/* Track — sombra dimensional para dar profundidad */}
-        <div className="relative rounded-3xl overflow-hidden
-                        shadow-[0_20px_60px_-10px_rgba(0,0,0,0.22),0_8px_24px_-6px_rgba(0,0,0,0.14)]
-                        ring-1 ring-black/6">
+        {/* touch-pan-y: the browser keeps vertical scrolling, horizontal swipes change the slide */}
+        <div
+          className="relative rounded-3xl overflow-hidden touch-pan-y
+                     shadow-[0_20px_60px_-10px_rgba(0,0,0,0.22),0_8px_24px_-6px_rgba(0,0,0,0.14)]
+                     ring-1 ring-black/6"
+          onPointerDown={(e) => { if (e.pointerType !== 'mouse') swipeX.current = e.clientX }}
+          onPointerUp={(e) => {
+            const start = swipeX.current
+            swipeX.current = null
+            if (start === null) return
+            const dx = e.clientX - start
+            if (Math.abs(dx) > 40) (dx < 0 ? next : prev)()
+          }}
+          onPointerCancel={() => { swipeX.current = null }}
+        >
           {/* Slides */}
           <div
             className="flex transition-transform duration-700 ease-in-out"
@@ -95,6 +110,8 @@ export function Gallery() {
                 <img
                   src={slide.src}
                   alt={t(slide.titleKey)}
+                  loading="lazy"
+                  draggable={false}
                   className="w-full h-[420px] md:h-[520px] object-cover
                              transition-transform duration-500 ease-out
                              group-hover:scale-[1.04]"
@@ -157,26 +174,28 @@ export function Gallery() {
         </div>
 
         {/* Dots */}
-        <div className="flex justify-center items-center gap-2 mt-5">
+        <div className="flex justify-center items-center mt-3">
           {SLIDES.map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
               aria-label={`Slide ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 focus:outline-none ${
-                i === current
-                  ? 'w-6 bg-forest-600'
-                  : 'w-1.5 bg-gray-300 hover:bg-gray-400'
-              }`}
-            />
+              aria-current={i === current}
+              className="group min-w-8 min-h-8 flex items-center justify-center cursor-pointer rounded-full
+                         focus:outline-none focus-visible:ring-2 focus-visible:ring-forest-300"
+            >
+              <span className={`block h-1.5 rounded-full transition-all duration-300 ${
+                i === current ? 'w-6 bg-forest-600' : 'w-1.5 bg-gray-300 group-hover:bg-gray-400'
+              }`} />
+            </button>
           ))}
         </div>
       </div>
 
       {/* ── CTA ──────────────────────────────────────── */}
       <div className="flex justify-center mt-10">
-        <a
-          href="#contact"
+        <Link
+          to="/tours"
           className="group flex items-center gap-2
                      border border-gray-300 hover:border-forest-600
                      text-gray-600 hover:text-forest-600
@@ -192,7 +211,7 @@ export function Gallery() {
             <line x1="5" y1="12" x2="19" y2="12"/>
             <polyline points="12 5 19 12 12 19"/>
           </svg>
-        </a>
+        </Link>
       </div>
     </section>
   )

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 /* ── Radial-gradient icon circle ───────────────────────────────── */
@@ -139,17 +140,17 @@ export function WhatToBringSection() {
 
         {/* CTA buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="/#contact"
+          <Link
+            to="/contacto"
             className="bg-forest-500 hover:bg-forest-400 text-white font-semibold
                        px-8 py-3.5 rounded-full text-sm
                        shadow-lg shadow-forest-200
                        transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
           >
             {t('toursPage.bookTour')}
-          </a>
-          <a
-            href="/"
+          </Link>
+          <Link
+            to="/"
             className="text-gray-400 hover:text-gray-700 font-medium text-sm
                        flex items-center gap-2 transition-colors duration-200"
           >
@@ -159,7 +160,7 @@ export function WhatToBringSection() {
               <polyline points="12 19 5 12 12 5"/>
             </svg>
             {t('toursPage.backHome')}
-          </a>
+          </Link>
         </div>
 
       </div>
